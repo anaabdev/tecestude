@@ -1,0 +1,1501 @@
+/*****************************DARK THEME***************************/
+.dark-theme {
+    & .infelemento{
+        color: rgb(205, 255, 66);
+    }
+
+    & .periodos {
+        background-color: #181818;/*Cor de Fundo*/
+        color: rgb(255, 255, 255); /*Cor das letras*/
+    }
+
+    & .grupostabela .grupos{
+        background-color: #181818; /*Cor de fundo*/
+        color: rgb(255, 255, 255); /*Cor da Letra*/
+    }
+
+    & .grupostabela .familias{
+        color:  rgb(255, 255, 255);
+    }
+
+    & .modal-content {
+        background-color: #181818;
+        border: #181818;
+    }
+
+    & .btn-close {
+        fill: white;
+    }
+
+    & .elementoatomo {
+        color: white;
+    }
+}
+/*****************************LIGHT THEME***************************/
+.light-theme {
+    & .infelemento{
+        color: rgb(79, 0, 112);
+    }
+
+    & .periodos {
+        background-color: #d3d3d3;/*Cor de Fundo*/
+        color: rgb(112, 112, 112); /*Cor das letras*/
+    }
+
+    & .grupostabela .grupos{
+        background-color: #d3d3d3;/*Cor de Fundo*/
+        color: rgb(112, 112, 112); /*Cor das letras*/
+    }
+
+    & .grupostabela .familias{
+        color: rgb(112, 112, 112);
+    }
+}
+
+/******************************OUTROS TAMANHOS********************************/
+@media (max-width: 100px) {
+    .tabelaperiodica{ 
+        display: flex; 
+        max-width: 90vw; /*Tamanho da viewport, deixa com uma margem de 10%*/ 
+        overflow-x: auto; /*Coloca a Barra de Rolagem*/
+    }   
+    .grupostabela{
+        position: relative;
+        right: 40px;
+        display: grid; /*Container de grade*/
+        grid-template-columns: repeat(19, 4%); /*Grade com 18 colunas, cada uma com 5% do container*/
+        gap: 0.65% 0.1%; /*Espaçamento entre os elementos*/
+        height: 825.2px;
+    }
+}
+
+@media (min-width: 101px) and (max-width:1400px) {
+    .tabelaperiodica{ 
+        display: flex; 
+        max-width: 90vw; /*Tamanho da viewport, deixa com uma margem de 10%*/ 
+        overflow-x: auto; /*Coloca a Barra de Rolagem*/
+    }   
+    .grupostabela{
+        position: relative;
+        right: 40px;
+        display: grid; /*Container de grade*/
+        grid-template-columns: repeat(19, 4%); /*Grade com 18 colunas, cada uma com 5% do container*/
+        gap: 0.65% 0.1%; /*Espaçamento entre os elementos*/
+        height: 825.2px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .tabelaperiodica{ 
+        display: flex; 
+        max-width: 90vw; /*Tamanho da viewport, deixa com uma margem de 10%*/
+        overflow-x: hidden;
+    }   
+    .grupostabela{
+        position: relative;
+        right: 40px;
+        display: grid; /*Container de grade*/
+        grid-template-columns: repeat(19, 4%); /*Grade com 18 colunas, cada uma com 5% do container*/
+        gap: 0.65% 0.1%; /*Espaçamento entre os elementos*/
+        height: 825.2px;
+    }
+}
+
+
+/******************************ÁTOMOS********************************/
+.atomos {
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.atomos:active {
+    cursor: grabbing;
+}
+
+/*********************************CLASSIFICAÇÕES********************************/  
+.classificacoes {
+    display: grid; 
+    font-size: 13px; 
+    width: 75%; 
+    max-width: 80vw; 
+    overflow-x: auto; 
+    gap: 0.1% 3%;
+    padding-left: 15%;
+}
+
+.classificacoes p {
+    position: relative; 
+    right: 10%;
+    bottom: 2%;
+}
+
+/********************************TABELA PERIÓDICA*******************************/
+
+/*Div onde estão os períodos, grupos, famílias e a tabela*/
+.tabelaperiodica{ display: flex; max-width: 90vw; /*Tamanho da viewport, deixa com uma margem de 10%*/ }
+
+/*Números dos Períodos da Tabela*/
+.periodos {
+    height: 610px; /*Altura*/
+    border-radius: 6px; /*Borda*/
+    display: grid; /*Container de grade*/
+    grid-template-rows: repeat(9, 11%); /*Grade com 9 linhas, cada uma com 11% do container*/
+    position: relative; 
+    top: 35px /*35px de cima para baixo*/;
+}
+.periodos h5 {
+    font-size: 10px; /*Tamanho da Letra*/
+}
+
+/*Conf dos Grupos*/
+.grupostabela .grupos{
+    font-size: 10px; /*Tamanho da Letra*/
+    padding: 13px 45px 11px 30px; /*Espaçamento*/
+}
+
+/*Conf das Familías*/
+.grupostabela .familias{
+    font-size: 10px;
+}
+
+/*Conf Botões dos elementos*/
+.grupostabela .btn {
+    margin: 0 auto; /*deixa os elementos em sua configuração inicial e deixa alinhado ao centro*/
+    border: none;
+}
+
+/***************************CONTEÚDO DENTRO DOS BOTÕES DE ELEMENTO********************************/
+.elemento h3, h5, h6 { padding: 10% 0 1% 0;  /*Espaçamento*/ line-height: 0.3; /*Altura entre as linhas*/}
+/*Símbolo do Elemento*/
+.elemento h3{ font-size: 20px; /*Tamanho da letra de h3*/}
+/*Nome do Elemento*/
+.elemento h5{ font-size: 10px; /*Tamanho da letra de h5*/}
+/*Nº Atômico e Nº de Massa*/
+.elemento h6{ font-size: 8px; /*Tamanho da letra de h6*/}
+.natomico {display: flex; position: relative; top: 8px; /*coloca o nº atômico p cima*/}
+
+/*************************************CORES DOS ELEMENTOS**************************************/
+/*Não Metais*/
+#hidrogenio , #carbono , #nitrogenio , #oxigenio , #fosforo , #enxofre , #selenio {
+    background-color: rgba(245, 245, 220, 0);
+    transition: background-position 0.5s ease-in-out;
+    background-image: linear-gradient(45deg, #c949e0, #9647da, #9647da, #c949e0);
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-position 0.5s ease-in-out;
+    background-size: 200%;
+}
+#hidrogenio:hover , #carbono:hover , #nitrogenio:hover , #oxigenio:hover , #fosforo:hover , #enxofre:hover , #selenio:hover{
+    background-position: right bottom; /* Animação de cor diagonal */
+}
+
+/*Metais Alcalinos*/
+#litio , #sodio , #potassio , #rubidio , #cesio , #francio {
+    background-color: rgba(245, 245, 220, 0);
+    transition: background-position 0.5s ease-in-out;
+    background-image: linear-gradient(45deg,  #5599e6, #5566e6, #5566e6,  #5599e6);
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-position 0.5s ease-in-out;
+    background-size: 200%;
+}
+#litio:hover , #sodio:hover , #potassio:hover , #rubidio:hover , #cesio:hover , #francio:hover {
+    background-position: right bottom; /* Animação de cor diagonal */
+}
+
+/*Metais Alcalino-Terrosos*/
+#berilio , #magnesio , #calcio , #estroncio , #bario , #radio {
+    background-color: rgba(245, 245, 220, 0);
+    transition: background-position 0.5s ease-in-out;
+    background-image: linear-gradient(45deg,  #9ccc4d, #54b944, #54b944,  #9ccc4d);
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-position 0.5s ease-in-out;
+    background-size: 200%;
+    
+}
+#berilio:hover , #magnesio:hover , #calcio:hover , #estroncio:hover , #bario:hover , #radio:hover {
+    background-position: right bottom;
+}
+
+/*Metais de Transição*/
+#escandio , #titanio , #vanadio , #cromio , #manganes , #ferro, #cobalto, #niquel, #cobre , #zinco , 
+#itrio, #zirconio , #niobio, #molibdenio, #tecnecio, #rutenio, #rodio , #paladio, #prata, #cadmio, #hafnio, 
+#tantalo, #tungstenio , #renio, #osmio, #iridio, #platina, #ouro , #mercurio, #rutherfordio, #dubnio, #seaborgio, 
+#bohrio, #hassio, #meitnerio, #darmstadtio, #roentgenio, #copernicio {
+    background-color: rgba(245, 245, 220, 0);
+    transition: background-position 0.5s ease-in-out;
+    background-image: linear-gradient(45deg,  #e750a8, #cf3676, #cf3676,  #e750a8);
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-position 0.5s ease-in-out;
+    background-size: 200%;
+}
+#escandio:hover , #titanio:hover , #vanadio:hover , #cromio:hover , #manganes:hover , #ferro:hover, #cobalto:hover, #niquel:hover, #cobre:hover , 
+#zinco:hover , #itrio:hover, #zirconio:hover , #niobio:hover, #molibdenio:hover, #tecnecio:hover, #rutenio:hover, #rodio:hover , #paladio:hover, 
+#prata:hover, #cadmio:hover, #hafnio:hover, #tantalo:hover, #tungstenio:hover , #renio:hover, #osmio:hover, #iridio:hover, #platina:hover, 
+#ouro:hover , #mercurio:hover, #rutherfordio:hover, #dubnio:hover, #seaborgio:hover, #bohrio:hover, #hassio:hover, #meitnerio:hover, 
+#darmstadtio:hover, #roentgenio:hover, #copernicio:hover {
+    background-position: right bottom;
+}
+
+/*Outros Metais*/
+#aluminio , #galio , #indio , #estanho , #talio , #chumbo, #bismuto, #nihonio, #flerovio , #moscovio , 
+#livermorio {
+    background-color: rgba(245, 245, 220, 0);
+    transition: background-position 0.5s ease-in-out;
+    background-image: linear-gradient(45deg,  #ed7156, #d64a4f, #d64a4f,  #ed7156);
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-position 0.5s ease-in-out;
+    background-size: 200%;
+}
+#aluminio:hover , #galio:hover , #indio:hover , #estanho:hover , #talio:hover , #chumbo:hover, #bismuto:hover, #nihonio:hover, 
+#flerovio:hover , #moscovio:hover , #livermorio:hover {
+    background-position: right bottom;
+}
+
+/*Semimetais*/
+#boro , #silicio , #germanio , #arsenio , #antimonio , #telurio, #polonio {
+    background-color: rgba(245, 245, 220, 0);
+    transition: background-position 0.5s ease-in-out;
+    background-image: linear-gradient(45deg,  #f9bb58, #d6854a, #d6854a,  #f9bb58);
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-position 0.5s ease-in-out;
+    background-size: 200%;
+}
+#boro:hover , #silicio:hover , #germanio:hover , #arsenio:hover , #antimonio:hover , #telurio:hover, #polonio:hover {
+    background-position: right bottom;
+}
+
+/*Halogênios*/
+#fluor , #cloro , #bromo , #iodo , #astato , #tenessino {
+    background-color: rgba(245, 245, 220, 0);
+    transition: background-position 0.5s ease-in-out;
+    background-image: linear-gradient(45deg,  #6c29d9, #2f31ae, #2f31ae,  #6c29d9);
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-position 0.5s ease-in-out;
+    background-size: 200%;
+}
+#fluor:hover , #cloro:hover , #bromo:hover , #iodo:hover , #astato:hover , #tenessino:hover {
+    background-position: right bottom;
+}
+
+/*Gases Nobres*/
+#helio , #neonio , #argonio , #criptonio , #xenonio , #radonio , #oganessonio {
+    background-color: rgba(245, 245, 220, 0);
+    transition: background-position 0.5s ease-in-out;
+    background-image: linear-gradient(45deg,  #1d9bbc, #1dbcac, #1dbcac,  #1d9bbc);
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-position 0.5s ease-in-out;
+    background-size: 200%;
+}
+#helio:hover , #neonio:hover , #argonio:hover , #criptonio:hover , #xenonio:hover , #radonio:hover , #oganessonio:hover {
+    background-position: right bottom;
+}
+
+/*Lantanídeos*/
+#lantanio , #cerio , #praseodimio , #neodimio , #promecio , #samario ,
+#europio, #gadolinio, #terbio, #disprosio, #holmio, #erbio, #tulio, #iterbio, #lutecio {
+    background-color: rgba(245, 245, 220, 0);
+    transition: background-position 0.5s ease-in-out;
+    background-image: linear-gradient(45deg,  #6475b3, #6492b3, #6492b3,  #6475b3);
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-position 0.5s ease-in-out;
+    background-size: 200%;
+}
+#lantanio:hover , #cerio:hover , #praseodimio:hover , #neodimio:hover , #promecio:hover , #samario:hover , #europio:hover, #gadolinio:hover,
+#terbio:hover, #disprosio:hover, #holmio:hover, #erbio:hover, #tulio:hover, #iterbio:hover, #lutecio:hover {
+    background-position: right bottom;
+}
+
+/*Actnídios*/
+#actinio , #torio , #protactinio , #uranio , #netunio , #plutonio ,
+#americio, #curio, #berquelio, #californio, #einstenio, #fermio, #mendelevio, #nobelio, #laurencio {
+    background-color: rgba(245, 245, 220, 0);
+    transition: background-position 0.5s ease-in-out;
+    background-image: linear-gradient(45deg,  #8472ab, #9e64b3, #9e64b3,  #8472ab);
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-position 0.5s ease-in-out;
+    background-size: 200%;
+}
+#actinio:hover , #torio:hover , #protactinio:hover , #uranio:hover , #netunio:hover , #plutonio:hover ,#americio:hover, #curio:hover, 
+#berquelio:hover, #californio:hover, #einstenio:hover, #fermio:hover, #mendelevio:hover, #nobelio:hover, #laurencio:hover {
+    background-position: right bottom;
+}
+
+
+/*******************************************CONF DE CADA ELEMENTO***********************************/
+/*1*/
+#hidrogenio {
+    padding-left: 7.3px;
+    padding-right: 7.3px;
+}
+/*2*/
+#helio {
+    padding-left: 17.5px;
+    padding-right: 17.5px;
+}
+#helio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*3*/
+#litio {
+    padding-left: 21.5px;
+    padding-right: 21.5px;
+}
+#litio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*4*/
+#berilio {
+    padding-left: 17.5px;
+    padding-right: 17.5px;
+}
+#berilio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*5*/
+#boro {
+    padding-left: 20.5px;
+    padding-right: 20.5px;
+}
+#boro .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*6*/
+#carbono {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+#carbono .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+}
+/*7*/
+#nitrogenio {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+#nitrogenio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+}
+/*8*/
+#oxigenio {
+    padding-left: 11px;
+    padding-right: 11px;
+}
+#oxigenio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+}
+/*9*/
+#fluor {
+    padding-left: 19px;
+    padding-right: 19px;
+}
+#fluor .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*10*/
+#neonio {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#neonio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*11*/
+#sodio {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+#sodio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*12*/
+#magnesio {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/*13*/
+#aluminio {
+    padding-left: 12.2px;
+    padding-right: 12.2px;
+}
+/*14*/
+#silicio {
+    padding-left: 17.5px;
+    padding-right: 17.5px;
+}
+#silicio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*15*/
+#fosforo {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/*16*/
+#enxofre {
+    padding-left: 13.8px;
+    padding-right: 13.8px;
+}
+/*17*/
+#cloro {
+    padding-left: 19px;
+    padding-right: 19px;
+}
+#cloro .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*18*/
+#argonio {
+    padding-left: 13.5px;
+    padding-right: 13.5px;
+}
+/*19*/
+#potassio {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+/*20*/
+#calcio {
+    padding-left: 13.5px;
+    padding-right: 13.5px;
+}
+#calcio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*21*/
+#escandio {
+    padding-left: 11.5px;
+    padding-right: 11.5px;
+}
+/*22*/
+#titanio {
+    padding-left: 15.5px;
+    padding-right: 15.5px;
+}
+#titanio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*23*/
+#vanadio {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+#vanadio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 4px;
+}
+/*24*/
+#cromio {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#cromio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 6px;
+}
+/*25*/
+#manganes {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+#manganes .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+}
+/*26*/
+#ferro {
+    padding-left: 13.5px;
+    padding-right: 13.5px;
+}
+#ferro .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 6px;
+}
+/*27*/
+#cobalto {
+    padding-left: 13.5px;
+    padding-right: 13.5px;
+}
+#cobalto .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*28*/
+#niquel {
+    padding-left: 16.5px;
+    padding-right: 16.5px;
+}
+#niquel .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*29*/
+#cobre {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+#cobre .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*30*/
+#zinco {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#zinco .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 6px;
+}
+/*31*/
+#galio {
+    padding-left: 17.5px;
+    padding-right: 17.5px;
+}
+#galio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*32*/
+#germanio {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+#germanio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+}
+/*33*/
+#arsenio {
+    padding-left: 14.5px;
+    padding-right: 14.5px;
+}
+#arsenio .natomico {
+    display: flex; 
+    top: 8px; /*coloca o nº atômico p cima*/
+    position: relative;
+    right: 8px;
+}
+/*34*/
+#selenio {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+#selenio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*35*/
+#bromo {
+    padding-left: 16.5px;
+    padding-right: 16.5px;
+}
+#bromo .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*36*/
+#criptonio {
+    padding-left: 11px;
+    padding-right: 11px;
+}
+/*37*/
+#rubidio {
+    padding-left: 14.5px;
+    padding-right: 14.5px;
+}
+#rubidio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*38*/
+#estroncio {
+    padding-left: 11px;
+    padding-right: 11px;
+}
+#estroncio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 4px;
+}
+/*39*/
+#itrio {
+    padding-left: 17.5px;
+    padding-right: 17.5px;
+}
+#itrio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*40*/
+#zirconio {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+#zirconio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 6px;
+}
+/*41*/
+#niobio {
+    padding-left: 16.5px;
+    padding-right: 16.5px;
+}
+#niobio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*42*/
+#molibdenio {
+    padding-left: 7.4px;
+    padding-right: 7.4px;
+}
+#molibdenio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+}
+/*43*/
+#tecnecio {
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+}
+#tecnecio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 4px;
+}
+/*44*/
+#rutenio {
+    padding-left: 14.3px;
+    padding-right: 14.3px;
+}
+#rutenio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 6px;
+}
+/*45*/
+#rodio {
+    padding-left: 18.2px;
+    padding-right: 18.2px;
+}
+#rodio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*46*/
+#paladio {
+    padding-left: 14.5px;
+    padding-right: 14.5px;
+}
+#paladio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*47*/
+#prata {
+    padding-left: 18.2px;
+    padding-right: 18.2px;
+}
+#prata .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*48*/
+#cadmio {
+    padding-left: 13.62px;
+    padding-right: 13.62px;
+}
+#cadmio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 6px;
+}
+/*49*/
+#indio {
+    padding-left: 19.7px;
+    padding-right: 19.7px;
+}
+#indio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*50*/
+#estanho {
+    padding-left: 12.3px;
+    padding-right: 12.3px;
+}
+#estanho .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 5px;
+}
+/*51*/
+#antimonio {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+#antimonio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+}
+/*52*/
+#telurio {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#telurio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*53*/
+#iodo {
+    padding-left: 19px;
+    padding-right: 19px;
+}
+#iodo .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*54*/
+#xenonio {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+#xenonio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 4px;
+}
+/*55*/
+#cesio {
+    padding-left: 19px;
+    padding-right: 19px;
+}
+
+#cesio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 9px;
+}
+/*56*/
+#bario {
+    padding-left: 18.8px;
+    padding-right: 18.8px;
+}
+#bario .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*72*/
+#hafnio {
+    padding-left: 15.5px;
+    padding-right: 15.5px;
+}
+#hafnio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 6px;
+}
+/*73*/
+#tantalo {
+    padding-left: 14.8px;
+    padding-right: 14.8px;
+}
+#tantalo .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*74*/
+#tungstenio {
+    padding-left: 7.3px;
+    padding-right: 7.3px;
+}
+/*75*/
+#renio {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+#renio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*76*/
+#osmio {
+    padding-left: 16.7px;
+    padding-right: 16.7px;
+}
+#osmio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*77*/
+#iridio {
+    padding-left: 18.5px;
+    padding-right: 18.5px;
+}
+#iridio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*78*/
+#platina {
+    padding-left: 14.85px;
+    padding-right: 14.85px;
+}
+#platina .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*79*/
+#ouro {
+    padding-left: 18.5px;
+    padding-right: 18.5px;
+}
+#ouro .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*80*/
+#mercurio {
+    padding-left: 11.3px;
+    padding-right: 11.3px;
+}
+#mercurio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 6px;
+}
+/*81*/
+#talio {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+#talio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*82*/
+#chumbo {
+    padding-left: 12.2px;
+    padding-right: 12.2px;
+}
+#chumbo .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 5px;
+}
+/*83*/
+#bismuto {
+    padding-left: 13.5px;
+    padding-right: 13.5px;
+}
+#bismuto .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 5px;
+}
+/*84*/
+#polonio {
+    padding-left: 14.7px;
+    padding-right: 14.7px;
+}
+#polonio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*85*/
+#astato {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+#astato .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 7px;
+}
+/*86*/
+#radonio {
+    padding-left: 13.2px;
+    padding-right: 13.2px;
+}
+#radonio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 5px;
+}
+/*87*/
+#francio {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#francio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*88*/
+#radio {
+    padding-left: 17.5px;
+    padding-right: 17.5px;
+}
+#radio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*104*/
+#rutherfordio {
+    padding-left: 3.3px;
+    padding-right: 3.3px;
+}
+/*105*/
+#dubnio {
+    padding-left: 15.6px;
+    padding-right: 15.6px;
+}
+#dubnio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*106*/
+#seaborgio {
+    padding-left: 8.55px;
+    padding-right: 8.55px;
+}
+/*107*/
+#bohrio {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+#bohrio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*108*/
+#hassio {
+    padding-left: 16.5px;
+    padding-right: 16.5px;
+}
+#hassio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*109*/
+#meitnerio {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#meitnerio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 5px;
+}
+/*110*/
+#darmstadtio {
+    padding-left: 3.6px;
+    padding-right: 3.6px;
+}
+/*111*/
+#roentgenio {
+    padding-left: 6.5px;
+    padding-right: 6.5px;
+}
+/*112*/
+#copernicio {
+    padding-left: 8.5px;
+    padding-right: 8.5px;
+}
+/*113*/
+#nihonio {
+    padding-left: 13.7px;
+    padding-right: 13.7px;
+}
+#nihonio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*114*/
+#flerovio {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+#flerovio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 6px;
+}
+/*115*/
+#moscovio {
+    padding-left: 11px;
+    padding-right: 11px;
+}
+#moscovio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 4px;
+}
+/*116*/
+#livermorio {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+#livermorio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+}
+/*117*/
+#tenessino {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/*118*/
+#oganessonio {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+/*57*/
+#lantanio {
+    padding-left: 11.5px;
+    padding-right: 11.5px;
+}
+#lantanio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 4px;
+}
+/*58*/
+#cerio {
+    padding-left: 19px;
+    padding-right: 19px;
+}
+#cerio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*59*/
+#praseodimio {
+    padding-left: 4.4px;
+    padding-right: 4.4px;
+}
+/*60*/
+#neodimio {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#neodimio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 4px;
+}
+/*61*/
+#promecio {
+    padding-left: 11.5px;
+    padding-right: 11.5px;
+}
+#promecio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 3px;
+}
+/*62*/
+#samario {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+#samario .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 6px;
+}
+/*63*/
+#europio {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+#europio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*64*/
+#gadolinio {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#gadolinio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 5px;
+}
+/*65*/
+#terbio {
+    padding-left: 17px;
+    padding-right: 17px;
+}
+#terbio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*66*/
+#disprosio {
+    padding-left: 10.5px;
+    padding-right: 10.5px;
+}
+#disprosio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 3px;
+}
+/*67*/
+#holmio {
+    padding-left: 15.5px;
+    padding-right: 15.5px;
+}
+#holmio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*68*/
+#erbio {
+    padding-left: 18.7px;
+    padding-right: 18.7px;
+}
+#erbio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*69*/
+#tulio {
+    padding-left: 17.8px;
+    padding-right: 17.8px;
+}
+#tulio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 12px;
+}
+/*70*/
+#iterbio {
+    padding-left: 16.3px;
+    padding-right: 16.3px;
+}
+#iterbio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 9px;
+}
+/*71*/
+#lutecio {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#lutecio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*89*/
+#actinio {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#actinio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 5px;
+}
+/*90*/
+#torio {
+    padding-left: 17.75px;
+    padding-right: 17.75px;
+}
+#torio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*91*/
+#protactinio {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+/*92*/
+#uranio {
+    padding-left: 15.5px;
+    padding-right: 15.5px;
+}
+#uranio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*93*/
+#netunio {
+    padding-left: 13.7px;
+    padding-right: 13.7px;
+}
+#netunio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 8px;
+}
+/*94*/
+#plutonio {
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+}
+#plutonio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 6px;
+}
+/*95*/
+#americio {
+    padding-left: 11px;
+    padding-right: 11px;
+}
+#americio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 6px;
+}
+/*96*/
+#curio {
+    padding-left: 15.5px;
+    padding-right: 15.5px;
+}
+#curio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*97*/
+#berquelio {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#berquelio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+}
+/*98*/
+#californio {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+/*99*/
+#einstenio {
+    padding-left: 10.3px;
+    padding-right: 10.3px;
+}
+/*100*/
+#fermio {
+    padding-left: 15.8px;
+    padding-right: 15.8px;
+}
+#fermio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 11px;
+}
+/*101*/
+#mendelevio {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+/*102*/
+#nobelio {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+#nobelio .natomico {
+    display: flex; 
+    position: relative;
+    top: 8px; /*coloca o nº atômico p cima*/
+    right: 10px;
+}
+/*103*/
+#laurencio {
+    padding-left: 9.5px;
+    padding-right: 9.5px;
+}

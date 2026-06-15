@@ -1,0 +1,831 @@
+/*****************************DARK THEME***************************/
+body.dark-theme {
+    background-color: rgb(41, 41, 41);
+    color:  rgb(238, 238, 238);
+}
+
+.dark-theme {
+    & nav  {
+        background-color: #181818;
+    }
+    
+    & nav a {
+        color: #d6d6d6;
+    }
+
+    & nav a:hover {
+        color: #818181;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M1 2h14M1 8h14M1 14h14'/%3E%3C/svg%3E");
+    }
+    
+    & #active {
+        color: #ffffff;
+        font-weight: 500;
+    }
+
+    & #active:hover {
+        color: #d5d5d5;
+        font-weight: 500;
+    }
+
+    & .dropdown .btn{
+        color:#cdff4f;
+    }
+
+    & .dropdown-item {
+        color: #282828;
+    }
+
+    & .dropdown-item:hover {
+        color: #282828;
+    }
+    
+    & .equipetxt , .mb-1 {
+        color: #e7e7e7;
+    }
+
+    & .card-quiz {
+        background-color: #181818;
+        color: white;
+    }
+
+    & .card-text {
+        color: rgb(213, 213, 213);
+    }
+
+    & .card-footer{
+        background-color: #0d0d0d;
+    }
+
+    & footer  {
+        background-image: url(../Imagens/Footer\ 1.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    & footer a {
+        color: #cdff4f;
+        text-decoration: none;
+    }
+
+    & .card {
+        background-color: rgb(29, 29, 29);
+    }
+
+    & .subtitle {
+        color: rgb(220, 220, 220);
+    }
+
+    & #cardPalavraSom {
+        background-color: #0d0d0d;
+
+        & .closeCardPalavraSom{  
+            fill: white;  
+        }
+
+        & .contPalavraSom {
+            color: white;
+        }
+    }
+
+    & .accordion-button {
+        background-color: #f1f1f1; 
+        color: #1f1f1f; 
+        border: 2px solid transparent; 
+        transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+        box-shadow: none; 
+    }
+    
+    & .accordion-body {
+        background-color: #393939; 
+        color: #ffffff;
+    }
+    
+    & .accordion-button:not(.collapsed) {
+        box-shadow: 0 0 1px 5px rgba(123, 123, 123, 0.5); 
+        background-color: blueviolet; 
+        color: #f2ff00; 
+    }
+    
+    & .accordion-button.collapsed {
+        box-shadow: none; 
+        background-color: #303030; 
+        color: #ffffff; 
+    }
+
+    & .descricaoacess {
+        color: white;
+    }
+
+    & .descricaoacess strong , a {
+        color: rgb(201, 255, 4);
+    }
+
+    & .descricaoacess .list-group-flush .list-group-item {
+        background-color:  #1d1d1d;
+        color: white;
+    }
+
+    & .active-step {
+        color: white;
+
+        & h6 {
+            color: rgb(214, 214, 214);
+        }
+    }
+}
+
+/*****************************LIGHT THEME***************************/
+.light-theme {
+    & nav  {
+        background-color: #f4f4f4;
+    }
+    
+    & nav a {
+        color: #1e1e1e;
+    }
+
+    & nav a:hover {
+        color: #525252; 
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='grey' stroke-width='2' d='M1 2h14M1 8h14M1 14h14'/%3E%3C/svg%3E");
+    }
+    
+    & #active {
+        color: #1a1a1a;
+        font-weight: 600;
+    }
+
+    & #active:hover {
+        color: #444343;
+        font-weight: 600;
+    }
+
+    & .dropdown .btn{
+        color:#6400b0;
+    }
+
+    & .dropdown-item {
+        color: #282828;
+    }
+
+    & .dropdown-item:hover {
+        color: #282828;
+    }
+    
+    & .equipetxt , .mb-1 {
+        color: #515151;
+    }
+
+    & .accordion-button {
+        background-color: #e2e2e2; 
+        color: #1f1f1f; 
+        border: 2px solid transparent; 
+        transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+        box-shadow: none; 
+    }
+    
+    & .accordion-body {
+        background-color: #dadada; 
+        color: #1c1c1c;
+    }
+    
+    & .accordion-button:not(.collapsed) {
+        box-shadow: 0 0 1px 5px rgba(123, 123, 123, 0.5); 
+        background-color: rgb(226, 43, 168); 
+        color: #f2ff00; 
+    }
+    
+    & .accordion-button.collapsed {
+        box-shadow: none; 
+        background-color: #e2e2e2; 
+        color: #1f1f1f; 
+    }
+
+    & footer  {
+        background-image: url(../Imagens/Footer\ 2.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    & footer a {
+        color: #5f00a3;
+        text-decoration: none;
+    }
+
+    & .descricaoacess strong , a {
+        color: blueviolet;
+    }
+}
+
+/******************POP-UP DE INTRODUÇÃO**********************/
+@media (max-width: 300px) {
+    .popup-background {
+        display: none; /* Começa oculto */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+        justify-content: flex-end; /* Alinha o pop-up ao fundo direito */
+        align-items: flex-end; /* Alinha o pop-up ao fundo direito */
+        z-index: 1019;
+    }
+    
+    /* Estilo para o pop-up em si */
+    .popup-content {
+        border-radius: 10px;
+        width: 190px;
+        height: 370px;
+        text-align: center;
+        position: relative; 
+        margin: 10px;
+    }
+    
+    /* Imagem acima dos cards */
+    .popup-image {
+        position: absolute; /* Coloca a imagem sobreposta */
+        bottom: 0; /* Ajuste conforme necessário */
+        right: -20px; /* Mantém a imagem na direita */
+        width: 130px; /* Ajusta o tamanho da imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        z-index: 10; /* Garante que a imagem fique sobre os cards */
+    }
+    
+    #step1 {
+        max-width: 90%; 
+        height: 90%; 
+        position: relative; 
+        right: 55px;
+        padding: 5px 10px;
+        
+        & h5 {
+            font-size: 15px;
+        }
+
+        & p {
+            font-size: 13px;
+        }
+    }   
+}
+
+@media (min-width: 300px) and (max-width:350px) {
+    .popup-background {
+        display: none; /* Começa oculto */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+        justify-content: flex-end; /* Alinha o pop-up ao fundo direito */
+        align-items: flex-end; /* Alinha o pop-up ao fundo direito */
+        z-index: 1019;
+    }
+    
+    /* Estilo para o pop-up em si */
+    .popup-content {
+        border-radius: 10px;
+        width: 200px;
+        height: 370px;
+        text-align: center;
+        position: relative; 
+        margin: 10px;
+    }
+    
+    /* Imagem acima dos cards */
+    .popup-image {
+        position: absolute; /* Coloca a imagem sobreposta */
+        bottom: 0; /* Ajuste conforme necessário */
+        right: -20px; /* Mantém a imagem na direita */
+        width: 180px; /* Ajusta o tamanho da imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        z-index: 10; /* Garante que a imagem fique sobre os cards */
+    }
+    
+    #step1 {
+        max-width: 90%; 
+        height: 90%; 
+        position: relative; 
+        right: 90px;
+        padding: 5px 10px;
+        
+        & h5 {
+            font-size: 16px;
+        }
+
+        & p {
+            font-size: 13px;
+        }
+    }   
+}
+
+@media (min-width: 350px) and (max-width:400px) {
+    .popup-background {
+        display: none; /* Começa oculto */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+        justify-content: flex-end; /* Alinha o pop-up ao fundo direito */
+        align-items: flex-end; /* Alinha o pop-up ao fundo direito */
+        z-index: 1019;
+    }
+    
+    /* Estilo para o pop-up em si */
+    .popup-content {
+        border-radius: 10px;
+        width: 250px;
+        height: 320px;
+        text-align: center;
+        position: relative; 
+        margin: 10px;
+    }
+    
+    /* Imagem acima dos cards */
+    .popup-image {
+        position: absolute; /* Coloca a imagem sobreposta */
+        bottom: 0; /* Ajuste conforme necessário */
+        right: -20px; /* Mantém a imagem na direita */
+        width: 180px; /* Ajusta o tamanho da imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        z-index: 10; /* Garante que a imagem fique sobre os cards */
+    }
+    
+    #step1 {
+        max-width: 90%; 
+        height: 90%; 
+        position: relative; 
+        right: 90px;
+        padding: 5px 10px;
+        
+        & h5 {
+            font-size: 18px;
+        }
+
+        & p {
+            font-size: 13px;
+        }
+    }   
+}
+
+@media (min-width: 400px) {
+    .popup-background {
+        display: none; /* Começa oculto */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+        justify-content: flex-end; /* Alinha o pop-up ao fundo direito */
+        align-items: flex-end; /* Alinha o pop-up ao fundo direito */
+        z-index: 1019;
+    }
+    
+    /* Estilo para o pop-up em si */
+    .popup-content {
+        border-radius: 10px;
+        width: 320px;
+        height: 300px;
+        text-align: center;
+        position: relative; 
+        margin: 10px;
+    }
+    
+    /* Imagem acima dos cards */
+    .popup-image {
+        position: absolute; /* Coloca a imagem sobreposta */
+        bottom: 0; /* Ajuste conforme necessário */
+        right: -20px; /* Mantém a imagem na direita */
+        width: 190px; /* Ajusta o tamanho da imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        z-index: 10; /* Garante que a imagem fique sobre os cards */
+    }
+    
+    #step1 {
+        max-width: 90%; 
+        height: 90%; 
+        position: relative; 
+        right: 80px;
+        padding: 5px 10px;
+        
+        & h5 {
+            font-size: 18px;
+        }
+
+        & p {
+            font-size: 14px;
+        }
+    }   
+}
+
+* { font-family: "League Spartan", sans-serif; /*Fonte da Letra*/ font-weight: 400; /*Grossura da Fonte*/}
+
+/********************************BARRA DE ROLAGEM********************************/
+::-webkit-scrollbar { width: 5px; height: 5px;}
+::-webkit-scrollbar-track { background: rgb(215, 215, 215); border-radius: 5px; }
+::-webkit-scrollbar-thumb { background: rgb(149, 139, 160); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(121, 115, 126);}
+
+/***********************************NAVEGADOR***********************************/
+nav {
+ position: sticky;
+ top: auto;
+}
+ 
+/**********************************BOTÃO DE MODO LIGHT OU DARK ********************************/
+.form-check-input:focus , .form-control:focus{
+    border-color: rgba(184, 184, 184, 0.332); /* Altere a cor da borda quando o select estiver em foco */
+    box-shadow: 0 0 0 0.2rem rgba(157, 156, 156, 0.237); /* Altere a cor da "aura" com uma sombra */
+}
+
+/* Geral e nao selecionado*/
+ .form-check-input {
+    width: 20px;
+    height: 15px;
+    background-color: #5f74ff; 
+    border-color: #5f74ff; 
+    appearance: none; 
+    border-radius: 25px; 
+    position: relative; 
+    outline: none; 
+    transition: background-color 0.3s, border-color 0.3s; 
+}
+
+/* Modo Light */
+.form-check-input::before {
+    content: '';
+    position: absolute;
+    top: 10%; /* Margem superior */
+    left: 5%; /* Margem esquerda */
+    width: 43%;
+    height: 80%;
+    border-radius: 50%; /* Faz a bolinha redonda */
+    background-color: rgb(255, 234, 0); 
+    transition: background-color 0.3s, left 0.3s; 
+}
+
+/* Modo Dark*/
+.form-check-input:checked {
+    background-color: #191381;
+    border-color: #191381; 
+}
+
+/* Modo Dark */
+.form-check-input:checked::before {
+    left: calc(100% - 46%); /* Move a bolinha para a direita */
+    background-color: rgb(176, 175, 237); /* Bolinha verde quando ativado */
+}
+
+@media (max-width: 800px) {
+    .cardcarrousel {
+        flex: 0 0 90%; 
+        margin: 2% 0 2% 5.2%;
+    }
+}
+
+@media (min-width: 801px) and (max-width:1100px) {
+    .cardcarrousel {
+        flex: 0 0 45%; 
+        margin: 2% 0 2% 3.5%;
+    }
+}
+
+@media (min-width: 1101px) {
+    .cardcarrousel {
+        flex: 0 0 32.1%; 
+        margin: 2% 0 2% 1%; /* Margens dos cards */
+    }
+}
+
+/***********************************CARROSSEL DE IMAGENS HOME************************************/
+#carrossel {
+    max-width: 98%; 
+    margin: 0 auto; 
+    height: 90%; 
+    display: flex; 
+    top: 12px;
+}
+
+@media (max-width: 100px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 150px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}
+
+@media (min-width: 100px) and (max-width: 415px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 200px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}
+
+@media (min-width: 415px) and (max-width: 604px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 250px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}
+
+@media (min-width: 605px) and (max-width: 800px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 350px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}
+
+@media (min-width: 801px) and (max-width: 995px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 450px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}
+
+@media (min-width: 996px) and (max-width: 1180px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 550px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}
+
+@media (min-width: 1181px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 650px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}
+
+/*********************************CARDS CARROSSEL********************************/
+.carousel-container {
+    position: relative;
+    width: 65%; /* Largura do container do carrossel */
+    overflow: visible; /* Permitir que os elementos excedam a largura do container */
+    margin: auto; /* Centraliza o container na tela */
+}
+
+.carousel-cards {
+    display: flex; /* Permite a disposição horizontal dos cards */
+    overflow-x: auto; /* Ativa a barra de rolagem horizontal */
+    scroll-behavior: smooth; /* Transição suave ao rolar */
+}
+
+.btn-carousel {
+    position: absolute; /* Posiciona os botões em relação ao container */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajusta o alinhamento vertical */
+    padding: 10px 14px 5px 10px; /* Espaciamento interno dos botões */
+    cursor: pointer; /* Aponta que é clicável */
+    z-index: 10; /* Coloca os botões acima de outros elementos */
+    border-radius: 50%; /* Botões arredondados */
+    background-color: blueviolet; /* Cor de fundo dos botões */
+    color: white; /* Cor do texto dos botões */
+}
+
+/*********************BOTÃO VLIBRAS E PALAVRASOM ACESSIBILIDADE********************/
+@media (max-width: 100px) {
+/*Card do botão PalavraSom*/
+.cardPalavraSom {
+    width: 300px;
+    height: 450px;
+    transition: opacity 0.3s ease;
+    position: fixed;
+    right: 20px;    
+    top: 50%;       
+    transform: translateY(-50%); 
+    z-index: 9999;
+}
+    
+/*Conteúdo do Card PalavraSom*/
+.contPalavraSom {
+    width: 300px; 
+    overflow: auto; 
+    padding: 10px;
+
+    & h5 {
+        font-size: 18px;
+        text-align: center; 
+        font-weight: 600;
+    }
+}
+
+.PalavraSomhidden {
+    display: none;
+}
+
+/*Botão para fechar o Card do botão PalavraSom*/
+.closeCardPalavraSom {
+    padding: 5px 7px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.pararDeFalar {
+    font-size: 16px;
+    padding: 5px 25px;
+    margin-top: 10px;
+    background-color: blueviolet;
+    color: aliceblue;
+}
+.pararDeFalar:hover {
+    background-color: rgb(98, 31, 161);
+    color: aliceblue;
+}
+
+/*Video Palavra Som*/
+.videoPalavraSom {
+    width: 280px;
+}
+}
+
+@media (min-width: 100px) and (max-width: 450px){
+/*Card do botão PalavraSom*/
+.cardPalavraSom {
+    width: 220px;
+    height: 320px;
+    transition: opacity 0.3s ease;
+    position: fixed;
+    right: 20px;    
+    top: 50%;       
+    transform: translateY(-50%); 
+    z-index: 9999;
+}
+    
+/*Conteúdo do Card PalavraSom*/
+.contPalavraSom {
+    width: 210px; 
+    overflow: auto; 
+    padding: 10px;
+
+    & h5 {
+        font-size: 16px;
+        text-align: center; 
+        font-weight: 600;
+    }
+
+    & p {
+        font-size: 14px;
+    }
+}
+
+.PalavraSomhidden {
+    display: none;
+}
+
+/*Botão para fechar o Card do botão PalavraSom*/
+.closeCardPalavraSom {
+    padding: 5px 7px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.pararDeFalar {
+    font-size: 14px;
+    padding: 5px 25px;
+    margin-top: 10px;
+    background-color: blueviolet;
+    color: aliceblue;
+}
+.pararDeFalar:hover {
+    background-color: rgb(98, 31, 161);
+    color: aliceblue;
+}
+
+/*Video Palavra Som*/
+.videoPalavraSom {
+    width: 190px;
+}
+}
+
+@media (min-width: 450px) {
+    /*Card do botão PalavraSom*/
+    .cardPalavraSom {
+        width: 300px;
+        height: 450px;
+        transition: opacity 0.3s ease;
+        position: fixed;
+        right: 20px;    
+        top: 50%;       
+        transform: translateY(-50%); 
+        z-index: 9999;
+    }
+        
+    /*Conteúdo do Card PalavraSom*/
+    .contPalavraSom {
+        width: 300px; 
+        overflow: auto; 
+        padding: 10px;
+
+        & h5 {
+            font-size: 18px;
+            text-align: center; 
+            font-weight: 600;
+        }
+    }
+
+    .PalavraSomhidden {
+        display: none;
+    }
+
+    /*Botão para fechar o Card do botão PalavraSom*/
+    .closeCardPalavraSom {
+        padding: 5px 7px;
+        margin-top: 10px;
+        cursor: pointer;
+        border: none;
+    }
+
+    .pararDeFalar {
+        font-size: 16px;
+        padding: 5px 25px;
+        margin-top: 10px;
+        background-color: blueviolet;
+        color: aliceblue;
+    }
+    .pararDeFalar:hover {
+        background-color: rgb(98, 31, 161);
+        color: aliceblue;
+    }
+
+    /*Video Palavra Som*/
+    .videoPalavraSom {
+        width: 280px;
+    }
+}
+
+    
+/*Conf do grid com o btnPalavraSom e o botão de libras*/
+.acessbtn { 
+    position: fixed; 
+    right: 20px;   
+    top: 50%;        
+    transform: translateY(-50%); 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 110%; 
+    align-items: center; 
+    z-index: 9999;
+}
+    
+/*Botão Palavra Som*/
+.btnPalavraSom {
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: blueviolet;
+    border: none;
+    padding: 7px 10px;
+    margin-right: 10px;
+}
+.btnPalavraSom:hover {
+    background-color: rgb(98, 31, 161);
+}
+
+/*PALAVRA SOM*/
+.selected-text {
+    background-color: rgb(137, 43, 226); /* Altere para a cor que preferir */
+    color: #e6e6e6;
+}
+
+.selected-text:hover {
+    background-color: rgb(137, 43, 226); /* Altere para a cor que preferir */
+    color: #e6e6e6;
+    
+}
+
+.clickable:hover {
+    cursor: pointer; /* Define o cursor como mão ao passar o mouse */
+    text-decoration: underline;
+    cursor: url('../Imagens/Cursor\ PalavraSom.png'), auto;
+}
+
+.word-select-enabled {
+    cursor: auto ; /* Altera o cursor quando a seleção de texto está habilitada */
+}
