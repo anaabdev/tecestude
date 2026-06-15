@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tec Estude · Aqui, estudar é mais divertido!</title>
+    <link rel="icon" href="Imagens/TabTec Logo3.svg"> <!-- Icon da Janela -->
+    <link rel="stylesheet" href="Style/css/bootstrap.min.css"> <!--bootstrap-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Fonte do Google-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet"> <!-- Link da Fonte do Google -->
+    <link rel="stylesheet" type="text/css" href="Style/geral.css" media="screen"> <!--css Geral-->
+</head>
+<body>
+
+    
+
+    <!--Botão PalavraSom e VLIBRAS-->
+<div class="container">
+    <div class="acessbtn">
+        <!-- Botão VLIBRAS que chama o plugin -->
+        <div vw class="enabled" style="grid-column: 1;grid-row: 1;">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+
+        <!--Botão Palavra Som-->
+        <button style="grid-column: 1;grid-row: 2;" id="btnPalavraSom" class="btn btn-primary btnPalavraSom">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
+                <path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z"/>
+                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.48 5.48 0 0 1 11.025 8a5.48 5.48 0 0 1-1.61 3.89z"/>
+                <path d="M8.707 11.182A4.5 4.5 0 0 0 10.025 8a4.5 4.5 0 0 0-1.318-3.182L8 5.525A3.5 3.5 0 0 1 9.025 8 3.5 3.5 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06"/>
+            </svg>
+        </button>
+    </div>
+
+    <!--Card Palavra Som-->
+    <div id="cardPalavraSom" class="card cardPalavraSom PalavraSomhidden">
+        <div class="card-header" border: none;">
+            <button id="closeCardPalavraSom" class="btn closeCardPalavraSom">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="contPalavraSom">
+            <h5>Escute o nosso Conteúdo! </h5>
+            <p class="avisoCard"> Aviso: Este recurso pode não funcionar como o esperado em dispositivos com telas pequenas.</p>
+
+            <video class="videoPalavraSom" src="Imagens/PalavraSomVideo.mp4" controls poster="Imagens/EscuteConteudo tumb.png"></video>
+
+            <div class="accordion accordion-flush">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsePalavraSom" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Tutorial
+                        </button>
+                    </h2>
+                    <div id="flush-collapsePalavraSom" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body"><p style="text-align: justify;">Preparamos um vídeo para te ensinar a utilizar este recurso! Caso tenha alguma dúvida, nos contate através de nosso e-mail <b>tecestude@gmail.com</b> ou através de nossas redes sociais <b>@tecestude.</b></p>
+            
+                            <ol>
+                                <li> Para utilizar este recurso, basta selecionar a palavra ou texto que deseja escutar.</ul>
+                                <li> Após a seleção clique no botão localizado à direita "Escutar conteúdo".</ul>
+                            </ol>   
+                            <b>Pronto! Agora é só selecionar e escutar o conteúdo que deseja. </b> 
+                            <br>
+                            <br>
+                            <p>Caso deseje escutar outra palavra, siga as mesmas instruções anteriormente ditas. Ou, se quiser fechar este recurso, clique no botão localizado à esquerda "Fechar". </p> 
+                            <p style="text-align: right;">Com carinho, Equipe Tec Estude.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <div style="display: grid; gap: 3%;">
+            <button id="ativarCardPalavraSom" class="btn ativarCardPalavraSom" style="grid-column: 1;">Escutar Conteúdo</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+    <!-- JS -->
+<script src="Script/carrouselCard.js"></script>
+<script src="Script/falaElementos.js"></script>
+<script src="Script/modonoturno.js"></script>
+<script src="Script/palavraSom.js"></script>
+<script src="Script/introducao.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="Style/js/popper.min.js"></script>
+<script src="Style/js/bootstrap.min.js"></script>
+</body>
+</html>
