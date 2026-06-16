@@ -37,5 +37,12 @@ modal.addEventListener('show.bs.modal', function(event){
 
     document.getElementById('anoElemento').textContent =
         botao.dataset.ano;
+
+        const atomo = document.querySelector(".atomos");        
+        const nomeAtomo = botao.dataset.atomo;
+        atomo.id = nomeAtomo;
+        console.log(atomo);
+        console.log(nomeAtomo);
+
 });
 
