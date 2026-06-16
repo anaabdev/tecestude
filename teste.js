@@ -7,6 +7,10 @@ const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(container.clientWidth, container.clientHeight);
 container.appendChild(renderer.domElement); 
 
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
 
@@ -15,7 +19,7 @@ directionalLight.position.set(5, 5, 5).normalize();
 scene.add(directionalLight);
 
 const loader = new THREE.GLTFLoader();
-const modelPath = 'hidrogenio.glb';
+const modelPath = 'Imagens/atomos/estanho.glb';
 
 let mixer;
 let clock = new THREE.Clock();
