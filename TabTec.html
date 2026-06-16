@@ -202,8 +202,8 @@
                 <button type="button" class="btn btn-primary col element" style="grid-column: 2; grid-row: 3;"
                     id="hidrogenio" data-bs-toggle="modal" data-bs-target="#modalElemento"
                     data-message="Hidrogênio. Símbolo H. Número atômico 1. Massa 1,008. Pertence ao grupo 1, período 1, família 1A. Classificado como Não Metal."
-                    data-nome="Hidrogênio" data-simbolo="H" data-numero="1" data-massa="1.008" data-grupo="1"
-                    data-periodo="1" data-familia="1A" data-classificacao="Não Metal"
+                    data-nome="Hidrogênio" data-simbolo="H" data-numero="1" data-massa="1.008" data-grupo="1" 
+                    data-periodo="1" data-familia="1A" data-classificacao="Não Metal" data-atomo="atomo-hidrogenio"
                     data-descricao="O hidrogênio é o elemento químico mais abundante do universo. É um gás incolor, inodoro e altamente inflamável, utilizado na produção de amônia, combustíveis e pesquisas energéticas."
                     data-descoberto="" data-ano="">
                     <div class="elemento"
@@ -246,9 +246,8 @@
                                         <div class="card elementoatomo flex-grow-1 d-flex">
                                             <div
                                                 class="card-body d-flex flex-column justify-content-center align-items-center">
-
                                                 <!-- Centraliza a div do atomo -->
-                                                <div id="atomo-hidrogenio" class="atomos">
+                                                <div id="atomo" class="atomos">
 
                                                 </div>
 
@@ -1947,6 +1946,9 @@
                         </h6>
                     </div>
                 </button>
+
+                <!--começar a seta dos lantanideos-->
+
                 <button type="button" class="btn btn-primary col element" style="grid-column: 5; grid-row: 8;"
                     id="hafnio" data-bs-toggle="modal" data-bs-target="#modalElemento"
                     data-message="Háfnio. Símbolo Hf. Número atômico 72. Massa 178,49. Pertence ao grupo 4, período 6, família 4B. Classificado como Metal de Transição."
@@ -2496,6 +2498,11 @@
 
                     </div>
                 </button>
+
+                <!--começar a linha dos actnideos  (continuar a outra?)-->
+
+
+
                 <button type="button" class="btn btn-primary col element" style="grid-column: 5; grid-row: 9;"
                     id="rutherfordio" data-bs-toggle="modal" data-bs-target="#modalElemento"
                     data-message="Rutherfórdio. Símbolo Rf. Número atômico 104. Massa [267]. Pertence ao grupo 4, período 7, família 4B. Classificado como Metal de Transição."
@@ -2989,6 +2996,10 @@
                 </button>
 
                 <!--LANTANÍDEOS-->
+
+                <!--terminar a linha na horizontal e continuar a outra--> 
+
+
                 <button type="button" class="btn btn-primary col element" style="grid-column: 5; grid-row: 13;"
                     id="lantanio" data-bs-toggle="modal" data-bs-target="#modalElemento"
                     data-message="Lantânio. Símbolo La. Número atômico 57. Massa 138,91. Pertence ao grupo 3, período 6. Classificado como Lantanídeo."
@@ -3244,7 +3255,13 @@
                     </div>
                 </button>
 
+
+                
+
                 <!--ACTINÍDIOS-->
+
+                <!--terminar a ultima linha-->
+
                 <button type="button" class="btn btn-primary col element" style="grid-column: 5; grid-row: 14;"
                     id="actinio" data-bs-toggle="modal" data-bs-target="#modalElemento"
                     data-message="Actínio. Símbolo Ac. Número atômico 89. Massa 227. Pertence ao grupo 3, período 7. Classificado como Actinídeo."
@@ -3694,9 +3711,9 @@
     </div>
 
     <!--ATOMOS 3D-->
+    <script src="Script/ModalElemento.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script src="teste.js"></script>
 
     <!-- Rodapé -->
@@ -3829,7 +3846,6 @@
     <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
 
     <!-- JS -->
-    <script src="Script/ModalElemento.js"></script>
     <script src="Script/carrouselCard.js"></script>
     <script src="Script/falaElementos.js"></script>
     <script src="Script/modonoturno.js"></script>
