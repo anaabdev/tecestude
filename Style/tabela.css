@@ -30,6 +30,10 @@
     & .elementoatomo {
         color: white;
     }
+
+    & .linhas {
+        color: white;
+    }
 }
 /*****************************LIGHT THEME***************************/
 .light-theme {
@@ -49,6 +53,10 @@
 
     & .grupostabela .familias{
         color: rgb(112, 112, 112);
+    }
+
+    & .linhas {
+        color:#d3d3d3;
     }
 }
 
@@ -1499,3 +1507,5 @@
     padding-left: 9.5px;
     padding-right: 9.5px;
 }
+
+
