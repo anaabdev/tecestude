@@ -1,3 +1,4 @@
+// ======== THREE.JS ENV ========
 
 const container = document.querySelector('.atomos');
 
@@ -8,11 +9,15 @@ const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(container.clientWidth, container.clientHeight);
 container.appendChild(renderer.domElement); 
 
+// ======== ORBIT CONTROLS ========
+
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
 controls.minDistance = 2;  
 controls.maxDistance = 12; 
+
+// ======== LIGHT ========
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
@@ -20,6 +25,8 @@ scene.add(ambientLight);
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
 directionalLight.position.set(5, 5, 5).normalize();
 scene.add(directionalLight);
+
+// ======== DINAMIC 3D MODELS LOADER  ========
 
 const loader = new THREE.GLTFLoader();
 
@@ -29,17 +36,13 @@ let oModeloAtual = null;
 let isRendering = false; 
 
 function carregarAtomo(nomeAtomo) {
-
     if (oModeloAtual) {
         scene.remove(oModeloAtual);
         oModeloAtual = null;
     }
 
-
     const nomeLimpo = nomeAtomo.replace('atomo-', '').toLowerCase().trim();
     const modelPath = `Imagens/atomos/${nomeLimpo}.glb`;
-
-    console.log(`%c[Three.js] Carregando o átomo: ${nomeLimpo.toUpperCase()} -> Arquivo: ${modelPath}`, "color: #00bfff; font-weight: bold;");
 
     loader.load(modelPath, (gltf) => {
         oModeloAtual = gltf.scene;
@@ -53,13 +56,15 @@ function carregarAtomo(nomeAtomo) {
         clock.getDelta(); 
         if (mixer) mixer.setTime(0);
         
-        console.log(`%c[Three.js] Sucesso! Átomo renderizado: ${nomeLimpo}`, "color: #00fa9a; font-weight: bold;");
     }, undefined, (error) => {
-        console.error(`%c[Three.js] Erro ao carregar o modelo (${nomeLimpo}.glb):`, "color: #ff4500; font-weight: bold;", error);
+        console.error("Erro ao carregar o modelo:", error); 
     });
 }
 
-camera.position.z = 5;
+camera.position.set(3, 2.5, 4); 
+controls.update();
+
+// ======== ANIMATION LOOP ========
 
 function animate() {
     if (!isRendering) return;
@@ -72,16 +77,17 @@ function animate() {
     renderer.render(scene, camera);
 }
 
+// ======== MODAL EVENTS ========
+
 const modalElemento = document.getElementById('modalElemento');
 
 if (modalElemento) {
     
-
     modalElemento.addEventListener('show.bs.modal', (event) => {
         const botao = event.relatedTarget;
         
         if (botao) {
-            const nomeDoAtomo = botao.dataset.atomo || botao.id;
+            const nomeDoAtomo = botao.id;
             
             if (nomeDoAtomo) {
                 carregarAtomo(nomeDoAtomo);
@@ -112,6 +118,8 @@ if (modalElemento) {
         }
     });
 }
+
+// ======== RESIZE EVENT ========
 
 window.addEventListener('resize', () => {
     if (isRendering) {

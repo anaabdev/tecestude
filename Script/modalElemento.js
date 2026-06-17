@@ -39,7 +39,7 @@ modal.addEventListener('show.bs.modal', function(event){
         botao.dataset.ano;
 
         const atomo = document.querySelector(".atomos");        
-        const nomeAtomo = botao.dataset.atomo || botao.id;
+        const nomeAtomo = botao.id;
         atomo.id = nomeAtomo;
         console.log(atomo);
         console.log(nomeAtomo);
