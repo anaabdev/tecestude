@@ -19,7 +19,7 @@ directionalLight.position.set(5, 5, 5).normalize();
 scene.add(directionalLight);
 
 const loader = new THREE.GLTFLoader();
-const modelPath = 'Imagens/atomos/estanho.glb';
+const modelPath = 'Imagens/atomos/fermio.glb';
 
 let mixer;
 let clock = new THREE.Clock();
