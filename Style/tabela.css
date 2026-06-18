@@ -1660,3 +1660,51 @@
 }
 
 
+/***************** TITULO MODELO ATOMICO *******************/
+
+.titulo-modelo {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    font-weight: 300; 
+    letter-spacing: 0.5px;
+    pointer-events: none;
+}
+
+
+.legenda-atomos {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+    background: transparent; 
+    padding: 0;
+    color: white;
+    font-size: 11px;
+    pointer-events: none;
+}
+
+.legenda-atomos span { 
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 4px; 
+}
+
+.legenda-atomos i { 
+    width: 10px; 
+    height: 10px; 
+    display: block;
+    flex-shrink: 0;
+    border-radius: 50%; 
+    margin-right: 8px; 
+    margin-bottom: 5px;
+}
+
+.legenda-atomos span:nth-child(1) i { background: #760eff; }
+.legenda-atomos span:nth-child(2) i { background: #11b1f1; }
+.legenda-atomos span:nth-child(3) i { background: #ffb033; }
