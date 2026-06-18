@@ -121,17 +121,38 @@
 /******************************ÁTOMOS********************************/
 .atomos {
     width: 100%;
-    height: 320px;
+    height: 320px; 
     display: flex; 
     justify-content: center; 
     align-items: center;
     cursor: grab;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+.atomos canvas {
+    position: relative;
+    z-index: 2;
+}
+
+.atomos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .dark-theme .atomos {
-    background-image: none !important;
-    background-color: transparent !important;
+    background: transparent !important;
+}
+
+.dark-theme .atomos::before {
+    display: none;
 }
 
 @media (min-width: 768px) {
@@ -154,7 +175,6 @@
         margin-bottom: 0;
     }
 }
-
 /*********************************CLASSIFICAÇÕES********************************/  
 .classificacoes {
     display: grid; 
@@ -185,6 +205,9 @@
 }
 
 /********************************TABELA PERIÓDICA*******************************/
+#tabelaTitle {
+    text-align: left;
+}
 
 /*Div onde estão os períodos, grupos, famílias e a tabela*/
 .tabelaperiodica{ display: flex; max-width: 90vw; /*Tamanho da viewport, deixa com uma margem de 10%*/ }
