@@ -128,10 +128,17 @@
     cursor: grab;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
+    overflow: hidden;
 }
 
+
 .atomos canvas {
-    position: relative;
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 2;
 }
 
