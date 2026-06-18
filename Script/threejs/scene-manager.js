@@ -7,7 +7,9 @@ const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container
 
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(container.clientWidth, container.clientHeight);
+renderer.domElement.style.display = 'block';
+renderer.domElement.style.width = '100%';
+renderer.domElement.style.height = '100%';
 container.appendChild(renderer.domElement); 
 
 // ======== ORBIT CONTROLS ========
@@ -36,17 +38,26 @@ let mixer;
 let clock = new THREE.Clock();
 let oModeloAtual = null;
 let isRendering = false; 
+let controleCarregamento = 0;
 
 function carregarAtomo(nomeAtomo) {
-    if (oModeloAtual) {
-        scene.remove(oModeloAtual);
-        oModeloAtual = null;
+    controleCarregamento++;
+    const idAtual = controleCarregamento;
+
+    for (let i = scene.children.length - 1; i >= 0; i--) {
+        const obj = scene.children[i];
+        if (obj.type !== 'AmbientLight' && obj.type !== 'DirectionalLight') {
+            scene.remove(obj);
+        }
     }
+    oModeloAtual = null;
 
     const nomeLimpo = nomeAtomo.replace('atomo-', '').toLowerCase().trim();
     const modelPath = `Imagens/atomos/${nomeLimpo}.glb`;
 
     loader.load(modelPath, (gltf) => {
+        if (idAtual !== controleCarregamento) return;
+
         oModeloAtual = gltf.scene;
         scene.add(oModeloAtual);
         
@@ -103,7 +114,7 @@ if (modalElemento) {
 
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
-        renderer.setSize(width, height);
+        renderer.setSize(width, height, false);
         
         camera.position.set(3, 2.5, 4);
         controls.target.set(0, 0, 0);
@@ -114,11 +125,15 @@ if (modalElemento) {
 
     modalElemento.addEventListener('hidden.bs.modal', () => {
         isRendering = false;
+        controleCarregamento++;
         
-        if (oModeloAtual) {
-            scene.remove(oModeloAtual);
-            oModeloAtual = null;
+        for (let i = scene.children.length - 1; i >= 0; i--) {
+            const obj = scene.children[i];
+            if (obj.type !== 'AmbientLight' && obj.type !== 'DirectionalLight') {
+                scene.remove(obj);
+            }
         }
+        oModeloAtual = null;
     });
 }
 
@@ -131,6 +146,6 @@ window.addEventListener('resize', () => {
         
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
-        renderer.setSize(width, height);
+        renderer.setSize(width, height, false);
     }
 });
