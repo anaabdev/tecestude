@@ -1674,6 +1674,7 @@
     font-weight: 300; 
     letter-spacing: 0.5px;
     pointer-events: none;
+    user-select: none;
 }
 
 
@@ -1687,6 +1688,7 @@
     color: white;
     font-size: 11px;
     pointer-events: none;
+    user-select: none;
 }
 
 .legenda-atomos span { 
