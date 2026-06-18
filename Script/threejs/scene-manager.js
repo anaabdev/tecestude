@@ -5,7 +5,8 @@ const container = document.querySelector('.atomos');
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
 
-const renderer = new THREE.WebGLRenderer({ alpha: true });
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(container.clientWidth, container.clientHeight);
 container.appendChild(renderer.domElement); 
 
@@ -58,7 +59,7 @@ function carregarAtomo(nomeAtomo) {
         if (mixer) mixer.setTime(0);
         
     }, undefined, (error) => {
-        console.error("Erro ao carregar o modelo:", error); 
+        console.error(error); 
     });
 }
 
@@ -87,26 +88,27 @@ if (modalElemento) {
     modalElemento.addEventListener('show.bs.modal', (event) => {
         const botao = event.relatedTarget;
         
-        if (botao) {
-            const nomeDoAtomo = botao.id;
-            
-            if (nomeDoAtomo) {
-                carregarAtomo(nomeDoAtomo);
-            }
-        } else {
-            if (container && container.id) {
-                carregarAtomo(container.id);
-            }
+        if (botao && botao.id) {
+            carregarAtomo(botao.id);
+        } else if (container && container.id) {
+            carregarAtomo(container.id);
         }
     });
 
     modalElemento.addEventListener('shown.bs.modal', () => {
         isRendering = true;
 
-        camera.aspect = container.clientWidth / container.clientHeight;
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+
+        camera.aspect = width / height;
         camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setSize(width, height);
         
+        camera.position.set(3, 2.5, 4);
+        controls.target.set(0, 0, 0);
+        controls.update();
+
         animate();
     });
 
@@ -124,8 +126,11 @@ if (modalElemento) {
 
 window.addEventListener('resize', () => {
     if (isRendering) {
-        camera.aspect = container.clientWidth / container.clientHeight;
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+        
+        camera.aspect = width / height;
         camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setSize(width, height);
     }
 });
