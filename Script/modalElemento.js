@@ -41,8 +41,6 @@ modal.addEventListener('show.bs.modal', function(event){
         const atomo = document.querySelector(".atomos");        
         const nomeAtomo = botao.id;
         atomo.id = nomeAtomo;
-        console.log(atomo);
-        console.log(nomeAtomo);
 
 });
 
