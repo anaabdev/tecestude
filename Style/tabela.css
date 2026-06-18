@@ -34,6 +34,10 @@
     & .linhas {
         color: white;
     }
+
+    & .classificacoes button {
+        color:white;
+    }
 }
 /*****************************LIGHT THEME***************************/
 .light-theme {
@@ -57,6 +61,10 @@
 
     & .linhas {
         color:#d3d3d3;
+    }
+
+    & .classificacoes button {
+        color:black;
     }
 }
 
@@ -113,19 +121,67 @@
 /******************************ÁTOMOS********************************/
 .atomos {
     width: 100%;
-    height: 100%;
+    height: 320px; 
     display: flex; 
     justify-content: center; 
     align-items: center;
-    cursor: pointer;
+    cursor: grab;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
 }
 
+
+.atomos canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.atomos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.dark-theme .atomos {
+    background: transparent !important;
+}
+
+.dark-theme .atomos::before {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .atomos {
+        height: 100%;
+        min-height: 400px;
+    }
+}
 
 .atomos:active {
     cursor: grabbing;
 }
 
+#atomo3delemento {
+    margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    #atomo3delemento {
+        margin-bottom: 0;
+    }
+}
 /*********************************CLASSIFICAÇÕES********************************/  
 .classificacoes {
     display: grid; 
@@ -137,13 +193,28 @@
     padding-left: 15%;
 }
 
-.classificacoes p {
+.classificacoes button {
     position: relative; 
     right: 10%;
     bottom: 2%;
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+.classificacoes button:hover {
+    color: var(--cor-linha);
+    
 }
 
 /********************************TABELA PERIÓDICA*******************************/
+#tabelaTitle {
+    text-align: left;
+}
 
 /*Div onde estão os períodos, grupos, famílias e a tabela*/
 .tabelaperiodica{ display: flex; max-width: 90vw; /*Tamanho da viewport, deixa com uma margem de 10%*/ }
@@ -188,9 +259,80 @@
 .elemento h6{ font-size: 8px; /*Tamanho da letra de h6*/}
 .natomico {display: flex; position: relative; top: 8px; /*coloca o nº atômico p cima*/}
 
+/********************************SELEÇÃO FAMILIAS********************************************/
+
+.element {
+    transition: all 0.25s ease;
+}
+
+.element.opaco {
+    opacity: 0.30;
+}
+
+.element.destacado {
+    opacity: 1;
+    transform: scale(1.04);
+    box-shadow: 0 0 18px var(--cor-brilho);
+        
+    z-index: 10;
+}
+
+.classificacoes button{
+    transition: .25s;
+}
+
+.classificacoes button.ativo{
+    transform: scale(1.08);
+   transition: text-decoration 0.3s ease;
+   color: var(--cor-linha);
+   text-decoration: underline;
+}
+
+#naoMetais{
+    --cor-linha:#9647da;
+}
+
+#metaisAlcalinos{
+    --cor-linha:#5566e6;
+}
+
+#metaisAlcalinoTerrosos{
+    --cor-linha:#54b944;
+}
+
+#metaisTransicao{
+    --cor-linha:#d64aa5;
+}
+
+#outrosMetais{
+    --cor-linha:#d64a4f;
+}
+
+#semiMetais{
+    --cor-linha:#d68e4a;
+}
+
+#gasesNobres{
+    --cor-linha:#1dbcac;
+}
+
+#halogenios{
+    --cor-linha:#2f31ae;
+}
+
+#lantanideos{
+    --cor-linha:#6492b3;
+}
+
+#actinidios{
+    --cor-linha:#9e64b3;
+}
+    
+
 /*************************************CORES DOS ELEMENTOS**************************************/
 /*Não Metais*/
 #hidrogenio , #carbono , #nitrogenio , #oxigenio , #fosforo , #enxofre , #selenio {
+    --cor-brilho: #c949e0;
     background-color: rgba(245, 245, 220, 0);
     transition: background-position 0.5s ease-in-out;
     background-image: linear-gradient(45deg, #c949e0, #9647da, #9647da, #c949e0);
@@ -206,6 +348,7 @@
 
 /*Metais Alcalinos*/
 #litio , #sodio , #potassio , #rubidio , #cesio , #francio {
+    --cor-brilho:#5599e6;
     background-color: rgba(245, 245, 220, 0);
     transition: background-position 0.5s ease-in-out;
     background-image: linear-gradient(45deg,  #5599e6, #5566e6, #5566e6,  #5599e6);
@@ -221,6 +364,7 @@
 
 /*Metais Alcalino-Terrosos*/
 #berilio , #magnesio , #calcio , #estroncio , #bario , #radio {
+    --cor-brilho: #9ccc4d;
     background-color: rgba(245, 245, 220, 0);
     transition: background-position 0.5s ease-in-out;
     background-image: linear-gradient(45deg,  #9ccc4d, #54b944, #54b944,  #9ccc4d);
@@ -236,10 +380,11 @@
 }
 
 /*Metais de Transição*/
-#escandio , #titanio , #vanadio , #cromio , #manganes , #ferro, #cobalto, #niquel, #cobre , #zinco , 
+#escandio , #titanio , #vanadio , #cromo , #manganes , #ferro, #cobalto, #niquel, #cobre , #zinco , 
 #itrio, #zirconio , #niobio, #molibdenio, #tecnecio, #rutenio, #rodio , #paladio, #prata, #cadmio, #hafnio, 
 #tantalo, #tungstenio , #renio, #osmio, #iridio, #platina, #ouro , #mercurio, #rutherfordio, #dubnio, #seaborgio, 
 #bohrio, #hassio, #meitnerio, #darmstadtio, #roentgenio, #copernicio {
+    --cor-brilho:  #e750a8;
     background-color: rgba(245, 245, 220, 0);
     transition: background-position 0.5s ease-in-out;
     background-image: linear-gradient(45deg,  #e750a8, #cf3676, #cf3676,  #e750a8);
@@ -249,7 +394,7 @@
     transition: background-position 0.5s ease-in-out;
     background-size: 200%;
 }
-#escandio:hover , #titanio:hover , #vanadio:hover , #cromio:hover , #manganes:hover , #ferro:hover, #cobalto:hover, #niquel:hover, #cobre:hover , 
+#escandio:hover , #titanio:hover , #vanadio:hover , #cromo:hover , #manganes:hover , #ferro:hover, #cobalto:hover, #niquel:hover, #cobre:hover , 
 #zinco:hover , #itrio:hover, #zirconio:hover , #niobio:hover, #molibdenio:hover, #tecnecio:hover, #rutenio:hover, #rodio:hover , #paladio:hover, 
 #prata:hover, #cadmio:hover, #hafnio:hover, #tantalo:hover, #tungstenio:hover , #renio:hover, #osmio:hover, #iridio:hover, #platina:hover, 
 #ouro:hover , #mercurio:hover, #rutherfordio:hover, #dubnio:hover, #seaborgio:hover, #bohrio:hover, #hassio:hover, #meitnerio:hover, 
@@ -260,6 +405,7 @@
 /*Outros Metais*/
 #aluminio , #galio , #indio , #estanho , #talio , #chumbo, #bismuto, #nihonio, #flerovio , #moscovio , 
 #livermorio {
+    --cor-brilho:  #ed7156;
     background-color: rgba(245, 245, 220, 0);
     transition: background-position 0.5s ease-in-out;
     background-image: linear-gradient(45deg,  #ed7156, #d64a4f, #d64a4f,  #ed7156);
@@ -276,6 +422,7 @@
 
 /*Semimetais*/
 #boro , #silicio , #germanio , #arsenio , #antimonio , #telurio, #polonio {
+    --cor-brilho: #f9bb58;
     background-color: rgba(245, 245, 220, 0);
     transition: background-position 0.5s ease-in-out;
     background-image: linear-gradient(45deg,  #f9bb58, #d6854a, #d6854a,  #f9bb58);
@@ -290,7 +437,8 @@
 }
 
 /*Halogênios*/
-#fluor , #cloro , #bromo , #iodo , #astato , #tenessino {
+#fluor , #cloro , #bromo , #iodo , #astato , #tenesso {
+    --cor-brilho: #6c29d9;
     background-color: rgba(245, 245, 220, 0);
     transition: background-position 0.5s ease-in-out;
     background-image: linear-gradient(45deg,  #6c29d9, #2f31ae, #2f31ae,  #6c29d9);
@@ -300,12 +448,13 @@
     transition: background-position 0.5s ease-in-out;
     background-size: 200%;
 }
-#fluor:hover , #cloro:hover , #bromo:hover , #iodo:hover , #astato:hover , #tenessino:hover {
+#fluor:hover , #cloro:hover , #bromo:hover , #iodo:hover , #astato:hover , #tenesso:hover {
     background-position: right bottom;
 }
 
 /*Gases Nobres*/
 #helio , #neonio , #argonio , #criptonio , #xenonio , #radonio , #oganessonio {
+    --cor-brilho: #1d9bbc;
     background-color: rgba(245, 245, 220, 0);
     transition: background-position 0.5s ease-in-out;
     background-image: linear-gradient(45deg,  #1d9bbc, #1dbcac, #1dbcac,  #1d9bbc);
@@ -322,9 +471,10 @@
 /*Lantanídeos*/
 #lantanio , #cerio , #praseodimio , #neodimio , #promecio , #samario ,
 #europio, #gadolinio, #terbio, #disprosio, #holmio, #erbio, #tulio, #iterbio, #lutecio {
+    --cor-brilho:#1d9bbc;
     background-color: rgba(245, 245, 220, 0);
     transition: background-position 0.5s ease-in-out;
-    background-image: linear-gradient(45deg,  #6475b3, #6492b3, #6492b3,  #6475b3);
+    background-image: linear-gradient(45deg,  #1d9bbc, #6492b3, #6492b3,  #6475b3);
     color: white;
     border-radius: 5px;
     overflow: hidden;
@@ -339,6 +489,7 @@
 /*Actnídios*/
 #actinio , #torio , #protactinio , #uranio , #netunio , #plutonio ,
 #americio, #curio, #berquelio, #californio, #einstenio, #fermio, #mendelevio, #nobelio, #laurencio {
+    --cor-brilho: #8472ab;
     background-color: rgba(245, 245, 220, 0);
     transition: background-position 0.5s ease-in-out;
     background-image: linear-gradient(45deg,  #8472ab, #9e64b3, #9e64b3,  #8472ab);
@@ -491,12 +642,12 @@
 /*15*/
 #fosforo {
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 13px;
 }
 /*16*/
 #enxofre {
     padding-left: 13.8px;
-    padding-right: 13.8px;
+    padding-right: 13px;
 }
 /*17*/
 #cloro {
@@ -558,11 +709,11 @@
     right: 4px;
 }
 /*24*/
-#cromio {
+#cromo {
     padding-left: 15px;
     padding-right: 15px;
 }
-#cromio .natomico {
+#cromo .natomico {
     display: flex; 
     position: relative;
     top: 8px; /*coloca o nº atômico p cima*/
@@ -758,11 +909,11 @@
     top: 8px; /*coloca o nº atômico p cima*/
 }
 /*43*/
-#tecnecio {
+#tenesso {
     padding-left: 12.5px;
     padding-right: 12.5px;
 }
-#tecnecio .natomico {
+#tenesso .natomico {
     display: flex; 
     position: relative;
     top: 8px; /*coloca o nº atômico p cima*/
@@ -903,13 +1054,13 @@
 /*56*/
 #bario {
     padding-left: 18.8px;
-    padding-right: 18.8px;
+    padding-right: 18px;
 }
 #bario .natomico {
     display: flex; 
     position: relative;
     top: 8px; /*coloca o nº atômico p cima*/
-    right: 10px;
+    right: 18px;
 }
 /*72*/
 #hafnio {
@@ -1084,7 +1235,7 @@
 /*88*/
 #radio {
     padding-left: 17.5px;
-    padding-right: 17.5px;
+    padding-right: 18px;
 }
 #radio .natomico {
     display: flex; 
@@ -1205,9 +1356,9 @@
     top: 8px; /*coloca o nº atômico p cima*/
 }
 /*117*/
-#tenessino {
-    padding-left: 10px;
-    padding-right: 10px;
+#tenesso {
+    padding-left: 13px;
+    padding-right: 13px;
 }
 /*118*/
 #oganessonio {
@@ -1509,3 +1660,53 @@
 }
 
 
+/***************** TITULO MODELO ATOMICO *******************/
+
+.titulo-modelo {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    font-weight: 300; 
+    letter-spacing: 0.5px;
+    pointer-events: none;
+    user-select: none;
+}
+
+
+.legenda-atomos {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+    background: transparent; 
+    padding: 0;
+    color: white;
+    font-size: 11px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.legenda-atomos span { 
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 4px; 
+}
+
+.legenda-atomos i { 
+    width: 10px; 
+    height: 10px; 
+    display: block;
+    flex-shrink: 0;
+    border-radius: 50%; 
+    margin-right: 8px; 
+    margin-bottom: 5px;
+}
+
+.legenda-atomos span:nth-child(1) i { background: #760eff; }
+.legenda-atomos span:nth-child(2) i { background: #11b1f1; }
+.legenda-atomos span:nth-child(3) i { background: #ffb033; }

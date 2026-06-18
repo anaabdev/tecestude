@@ -21,7 +21,7 @@
     <nav class="sticky-top navbar navbar-expand-lg" id="navhome">
         <div class="container-fluid">
             <a class="navbar-brand" href="home.html">
-                <img src="Imagens/Logo Tec Estude.svg" id="logo" alt="Logo do site escrito Tec Estude" width="120px">
+                <img src="Imagens/Logo Tec Estude.svg" id="logo" alt="Logo do site escrito Tec Estude" width="120px" style="user-select: none;">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -79,7 +79,7 @@
 
     <!--Titulo-->
     <div class="container my-5" style="max-width: 80%; padding-right: 3%; margin-top: 3%; text-align: justify;">
-        <h1>Tabela Periódica Interativa</h1>
+        <h1 id="tabelaTitle">Tabela Periódica Interativa</h1>
         <p>Explore e estude os elementos da Tabela Periódica de forma divertida!</p>
         <p>Ao passar o mouse sobre os elementos, você pode escutar informações como o nome, símbolo, número atômico,
             massa, período, grupo, família e classificação. <i> Esta função pode não funcionar em dispositivos móveis
@@ -199,13 +199,13 @@
                 <h5 class="familias" style="grid-column: 18; grid-row: 3; position: relative; top: 56px;">VIIA</h5>
                 <h5 class="familias" style="grid-column: 19; grid-row: 2;">0</h5>
 
-                
+
                 <!-- PERÍODO 1 -->
                 <button type="button" class="btn btn-primary col element" style="grid-column: 2; grid-row: 3;"
                     id="hidrogenio" data-bs-toggle="modal" data-bs-target="#modalElemento"
                     data-message="Hidrogênio. Símbolo H. Número atômico 1. Massa 1,008. Pertence ao grupo 1, período 1, família 1A. Classificado como Não Metal."
                     data-nome="Hidrogênio" data-simbolo="H" data-numero="1" data-massa="1.008" data-grupo="1"
-                    data-periodo="1" data-familia="1A" data-classificacao="Não Metal" data-atomo="atomo-hidrogenio"
+                    data-periodo="1" data-familia="1A" data-classificacao="Não Metal"
                     data-descricao="O hidrogênio é o elemento químico mais abundante do universo. É um gás incolor, inodoro e altamente inflamável, utilizado na produção de amônia, combustíveis e pesquisas energéticas."
                     data-descoberto="" data-ano="">
                     <div class="elemento"
@@ -250,7 +250,13 @@
                                                 class="card-body d-flex flex-column justify-content-center align-items-center">
                                                 <!-- Centraliza a div do atomo -->
                                                 <div id="atomo" class="atomos">
+                                                    <div class="legenda-atomos">
+                                                    <span><i></i> Prótons</span>
+                                                    <span><i></i> Nêutrons</span>
+                                                    <span><i></i> Elétrons</span>
+                                                </div>
 
+                                                <div class="titulo-modelo">Modelo atómico de Bohr</div>
                                                 </div>
 
                                             </div>
@@ -969,7 +975,7 @@
                     </div>
                 </button>
                 <button type="button" class="btn btn-primary col element" style="grid-column: 7; grid-row: 6;"
-                    id="cromio" data-bs-toggle="modal" data-bs-target="#modalElemento" data-nome="Crômio"
+                    id="cromo" data-bs-toggle="modal" data-bs-target="#modalElemento" data-nome="Crômio"
                     data-simbolo="Cr" data-numero="24" data-massa="51,996" data-grupo="6" data-periodo="4"
                     data-familia="6B" data-classificacao="Metal de Transição"
                     data-descricao="Metal duro e brilhante utilizado em revestimentos anticorrosivos e na produção de aço inoxidável."
@@ -1950,27 +1956,35 @@
                 </button>
 
                 <!-- SVG das linhas / seta -->
-                <svg class="linhas"
-                style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"
-                viewBox="0 0 1000 700">
 
-                <path
-                d="M0 440 H35 V590 H50"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3">
+
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg class="linhas"style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+                    <text x="0" y="430" font-size="9" font-family="Arial" font-weight="bold" fill="currentColor">
+                        57–71
+                    </text>
+                </svg> 
+
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg class="linhas"style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+                    <text x="0" y="500" font-size="9" font-family="Arial" font-weight="bold" fill="currentColor">
+                        89-103
+                    </text>
+                </svg> 
+
+                <svg class="linhas"
+                    style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"
+                    viewBox="0 0 1000 700">
+
+                    <path d="M0 440 H35 V590 H50" fill="none" stroke="currentColor" stroke-width="3">
 
                 </svg>
 
                 <svg class="linhas"
-                style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"
-                viewBox="0 0 1000 700">
+                    style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"
+                    viewBox="0 0 1000 700">
 
-                <path
-                d="M0 510 H25 V660 H50"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3">
+                    <path d="M0 510 H25 V660 H50" fill="none" stroke="currentColor" stroke-width="3">
 
                 </svg>
 
@@ -2956,32 +2970,32 @@
 
 
                 <button type="button" class="btn btn-primary col element" style="grid-column: 18; grid-row: 9;"
-                    id="tenessino" data-bs-toggle="modal" data-bs-target="#modalElemento"
-                    data-message="Tenessino. Símbolo Ts. Número atômico 117. Massa [294]. Pertence ao grupo 17, período 7, família 7A. Classificado como Halogênio."
-                    data-nome="Tenessino" data-simbolo="Ts" data-numero="117" data-massa="[294]" data-grupo="17"
+                    id="tenesso" data-bs-toggle="modal" data-bs-target="#modalElemento"
+                    data-message="Tenesso. Símbolo Ts. Número atômico 117. Massa [294]. Pertence ao grupo 17, período 7, família 7A. Classificado como Halogênio."
+                    data-nome="Tenesso" data-simbolo="Ts" data-numero="117" data-massa="[294]" data-grupo="17"
                     data-periodo="7" data-familia="7A" data-classificacao="Halogênio"
                     data-descricao="Elemento sintético extremamente instável." data-descoberto="2010" data-ano="2010">
 
                     <div class="elemento"
-                        data-message="Tenessino. Símbolo Ts. Número atômico 117. Massa [294]. Pertence ao grupo 17, período 7, família 7A. Classificado como Halogênio.">
+                        data-message="Tenesso. Símbolo Ts. Número atômico 117. Massa [294]. Pertence ao grupo 17, período 7, família 7A. Classificado como Halogênio.">
 
                         <h6 class="natomico"
-                            data-message="Tenessino. Símbolo Ts. Número atômico 117. Massa [294]. Pertence ao grupo 17, período 7, família 7A. Classificado como Halogênio.">
+                            data-message="Tenesso. Símbolo Ts. Número atômico 117. Massa [294]. Pertence ao grupo 17, período 7, família 7A. Classificado como Halogênio.">
                             117
                         </h6>
 
                         <h3
-                            data-message="Tenessino. Símbolo Ts. Número atômico 117. Massa [294]. Pertence ao grupo 17, período 7, família 7A. Classificado como Halogênio.">
+                            data-message="Tenesso. Símbolo Ts. Número atômico 117. Massa [294]. Pertence ao grupo 17, período 7, família 7A. Classificado como Halogênio.">
                             Ts
                         </h3>
 
                         <h5
-                            data-message="Tenessino. Símbolo Ts. Número atômico 117. Massa [294]. Pertence ao grupo 17, período 7, família 7A. Classificado como Halogênio.">
-                            Tenessino
+                            data-message="Tenesso. Símbolo Ts. Número atômico 117. Massa [294]. Pertence ao grupo 17, período 7, família 7A. Classificado como Halogênio.">
+                            Tenesso
                         </h5>
 
                         <h6
-                            data-message="Tenessino. Símbolo Ts. Número atômico 117. Massa [294]. Pertence ao grupo 17, período 7, família 7A. Classificado como Halogênio.">
+                            data-message="Tenesso. Símbolo Ts. Número atômico 117. Massa [294]. Pertence ao grupo 17, período 7, família 7A. Classificado como Halogênio.">
                             [294]
                         </h6>
                     </div>
@@ -3551,44 +3565,44 @@
             <div
                 style="background-color: rgb(150, 71, 218); width: 11px; height: 11px; grid-column: 1; grid-row: 1 ; border-radius: 2px;">
             </div>
-            <p style="grid-column: 2; grid-row: 1;">Não Metais</p>
+            <button id="naoMetais" style="grid-column: 2; grid-row: 1;">Não Metais</button>
             <div
                 style="background-color:  rgb(85, 102, 230); width: 11px; height: 11px; grid-column: 3; grid-row: 1 ;  border-radius: 2px;">
             </div>
-            <p style="grid-column: 4; grid-row: 1;">Metais Alcalinos</p>
+            <button id="metaisAlcalinos" style="grid-column: 4; grid-row: 1;">Metais Alcalinos</button>
             <div
                 style="background-color:  rgb(84, 185, 68); width: 10.8px; height: 11px; grid-column: 5; grid-row: 1 ;  border-radius: 2px;">
             </div>
-            <p style="grid-column: 6; grid-row: 1;">Metais Alcalino-terrosos</p>
+            <button id="metaisAlcalinoTerrosos" style="grid-column: 6; grid-row: 1;">Metais Alcalino-terrosos</button>
             <div
                 style="background-color: rgb(214, 74, 165); width: 11px; height: 11px; grid-column: 7; grid-row: 1 ;  border-radius: 2px;">
             </div>
-            <p style="grid-column: 8; grid-row: 1;">Metais de Transição</p>
+            <button id="metaisTransicao" style="grid-column: 8; grid-row: 1;">Metais de Transição</button>
             <div
                 style="background-color: rgb(214, 74, 79); width: 11px; height: 11px; grid-column: 9; grid-row: 1 ;  border-radius: 2px;">
             </div>
-            <p style="grid-column: 10; grid-row: 1;">Outros Metais</p>
+            <button id="outrosMetais" style="grid-column: 10; grid-row: 1;">Outros Metais</button>
 
             <div
                 style="background-color: rgb(214, 142, 74); width: 10.5px; height: 10.5px; grid-column: 1; grid-row: 2 ;  border-radius: 2px;">
             </div>
-            <p style="grid-column: 2; grid-row: 2;">Semi Metais</p>
+            <button id="semiMetais" style="grid-column: 2; grid-row: 2;">Semi Metais</button>
             <div
                 style="background-color:  rgb(29, 188, 172); width: 11px; height: 10.5px; grid-column: 3; grid-row: 2 ;  border-radius: 2px;">
             </div>
-            <p style="grid-column: 4; grid-row: 2;">Gases Nobres</p>
+            <button id="gasesNobres" style="grid-column: 4; grid-row: 2;">Gases Nobres</button>
             <div
                 style="background-color:   rgb(47, 49, 174); width: 10.8px; height: 10.5px; grid-column: 5; grid-row: 2 ;  border-radius: 2px;">
             </div>
-            <p style="grid-column: 6; grid-row: 2;">Halogênios</p>
+            <button id="halogenios" style="grid-column: 6; grid-row: 2;">Halogênios</button>
             <div
                 style="background-color: rgb(100, 146, 179); width: 11px; height: 10.5px; grid-column: 7; grid-row: 2 ;  border-radius: 2px;">
             </div>
-            <p style="grid-column: 8; grid-row: 2;">Lantanídeos</p>
+            <button id="lantanideos" style="grid-column: 8; grid-row: 2;">Lantanídeos</button>
             <div
                 style="background-color: rgb(158, 100, 179); width: 11px; height: 10.5px; grid-column: 9; grid-row: 2 ;  border-radius: 2px;">
             </div>
-            <p style="grid-column: 10; grid-row: 2;">Actnídios</p>
+            <button id="actinidios" style="grid-column: 10; grid-row: 2;">Actnídios</button>
         </div>
     </div>
 
@@ -3739,7 +3753,8 @@
     <script src="Script/modalElemento.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="teste.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="Script/threejs/scene-manager.js"></script>
 
     <!-- Rodapé -->
     <footer id="footer" class="text-center">
@@ -3774,7 +3789,8 @@
                 </div>
                 <div style="position: relative; right: 8%;">
                     <hr>
-                    <p style="text-align: center;"><b>Tec Estude:</b> Aqui, estudar é mais divertido! © 2024 Todos os
+                    <p style="text-align: center;"><b>Tec Estude:</b> Aqui, estudar é mais divertido! © 2026 Todos
+                        os
                         direitos reservados.</p>
                 </div>
             </div>
@@ -3875,6 +3891,7 @@
     <script src="Script/falaElementos.js"></script>
     <script src="Script/modonoturno.js"></script>
     <script src="Script/palavraSom.js"></script>
+    <script src="Script/hoverFamilias.js"></script>
 
 
     <!-- Bootstrap JS -->
