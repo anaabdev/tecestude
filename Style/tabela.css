@@ -1674,7 +1674,7 @@
     font-weight: 300; 
     letter-spacing: 0.5px;
     pointer-events: none;
-    user-select: none;
+    user-select: none; 
 }
 
 
@@ -1710,3 +1710,40 @@
 .legenda-atomos span:nth-child(1) i { background: #760eff; }
 .legenda-atomos span:nth-child(2) i { background: #11b1f1; }
 .legenda-atomos span:nth-child(3) i { background: #ffb033; }
+
+/***************** MÃO DA DICA MODELO 3D *******************/
+
+.dica-interacao {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+
+.dica-interacao img {
+    width: 40px;
+    height: 40px;
+
+    animation: deslizarMao 4s infinite ease-in-out; 
+}
+
+@keyframes deslizarMao {
+    0%   { transform: translateX(0) rotate(0deg); opacity: 0; }
+    5%   { transform: translateX(0) rotate(0deg); opacity: 1; } 
+    25%  { transform: translateX(-30px) rotate(-15deg); }       
+    50%  { transform: translateX(30px) rotate(15deg); }         
+    65%  { transform: translateX(0) rotate(0deg); opacity: 1; } 
+    70%  { transform: translateX(0) rotate(0deg); opacity: 0; } 
+    100% { transform: translateX(0) rotate(0deg); opacity: 0; } 
+}
+
+.esconder-dica {
+    opacity: 0 !important;
+}

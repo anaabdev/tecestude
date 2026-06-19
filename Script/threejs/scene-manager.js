@@ -21,6 +21,17 @@ controls.minDistance = 2;
 controls.maxDistance = 12; 
 controls.enablePan = false;
 
+// logica da dica (maozinha)
+const dicaElement = document.getElementById('dicaInteracao');
+let dicaJaOcultada = false;
+
+controls.addEventListener('start', () => {
+    if (dicaElement && !dicaJaOcultada) {
+        dicaElement.classList.add('esconder-dica');
+        dicaJaOcultada = true; 
+    }
+});
+
 // ======== LIGHT ========
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
