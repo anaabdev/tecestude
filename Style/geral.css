@@ -830,43 +830,46 @@ nav {
     cursor: auto ; /* Altera o cursor quando a seleção de texto está habilitada */
 }
 
-#nome{
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    font-size: 15px;
-    background-color: #f9f9f9;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
+/* Coloque isso bem na primeira linha do seu arquivo CSS */
+
+.box-avaliacao {
+    display: block !important;
+    margin: 40px auto !important; /* Centraliza horizontalmente nas laterais */
+    background-color: #ffffff !important;
+    padding: 30px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+    width: 90% !important;
+    max-width: 420px !important; /* Força o limite para não esticar na tela */
+    box-sizing: border-box !important;
 }
-#Avaliação{
-width: 100%;
-    margin-bottom: 25px;
-    accent-color: #007bff;
+
+.box-avaliacao h2 {
+    text-align: center !important;
+    color: #333333 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
 }
-#sugestões{
-width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    font-size: 15px;
-    background-color: #f9f9f9;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-    resize: none;
+
+.box-avaliacao label {
+    display: block !important;
+    text-align: left !important; /* Alinha o texto das etiquetas à esquerda */
+    margin-bottom: 8px !important;
+    color: #555555 !important;
+    font-weight: 600 !important;
 }
-.center{
-    text-align: center;
-    justify-content: center;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    margin: auto;
-    box-sizing: border-box;
+
+#nome, #sugestões {
+    width: 100% !important;
+    padding: 12px !important;
+    margin-bottom: 20px !important;
+    border: 1px solid #cccccc !important;
+    border-radius: 8px !important;
+    background-color: #f9f9f9 !important;
+    box-sizing: border-box !important;
+}
+
+#Avaliação {
+    width: 100% !important;
+    margin-bottom: 25px !important;
 }

@@ -236,22 +236,26 @@
     </div>
 </div>
 
-<div>
-    <form action="" method="post">
-       <h2>Formulário de Avaliação</h2>
-        <label for="nome">Nome: </label>
-        <input for="name" id="nome"  name="nome" placeholder="Digite seu nome">
-        <br>    
-        <br>
-        <label for="Avaliação">Avalie de 1 a 5!</label>
-        <input type="range" id="Avaliação" name="Avaliação" min="1" max="5">
-        <br>
-        <br>
-        <label for="text">Sugestões</label>
-        <textarea id="sugestões" rows="5" cols="25"  spellcheck="false" autocomplete="off"></textarea>
-        <input type="submit" name="enviar">
-    </form>
-</div>  
+<div style="display: flex; justify-content: center; width: 100%; padding: 20px; box-sizing: border-box;">
+    
+    <div class="box-avaliacao" style="width: 100%; max-width: 400px; background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); box-sizing: border-box;">
+        <form method="post">
+           <h2 style="text-align: center; color: #333333; margin-top: 0; margin-bottom: 20px;">Formulário de Avaliação</h2>
+           
+           <label for="nome" style="display: block; text-align: left; margin-bottom: 8px; font-weight: 600; color: #555555;">Nome:</label>
+           <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+           
+           <label for="Avaliação" style="display: block; text-align: left; margin-bottom: 8px; font-weight: 600; color: #555555;">Avalie de 1 a 5!</label>
+           <input type="range" id="Avaliação" name="Avaliação" min="1" max="5">
+           
+           <label for="sugestões" style="display: block; text-align: left; margin-bottom: 8px; font-weight: 600; color: #555555;">Sugestões</label>
+           <textarea id="sugestões" rows="5" spellcheck="false" autocomplete="off"></textarea>
+           
+           <input type="submit" value="Enviar Avaliação" style="width: 100%; margin-top: 10px;">     
+        </form>
+    </div>
+
+</div> 
 
 <!-- Rodapé -->
 <footer id="footer" class="text-center">
