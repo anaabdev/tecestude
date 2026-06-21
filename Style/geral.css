@@ -829,3 +829,44 @@ nav {
 .word-select-enabled {
     cursor: auto ; /* Altera o cursor quando a seleção de texto está habilitada */
 }
+
+#nome{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+#Avaliação{
+width: 100%;
+    margin-bottom: 25px;
+    accent-color: #007bff;
+}
+#sugestões{
+width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    resize: none;
+}
+.center{
+    text-align: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    box-sizing: border-box;
+}
