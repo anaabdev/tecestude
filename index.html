@@ -236,22 +236,24 @@
     </div>
 </div>
 
-<div style="display: flex; justify-content: center; width: 100%; padding: 20px; box-sizing: border-box;">
+<!--forms -->
+
+<div class="forms" style="display: flex; justify-content: center; width: 100%; padding: 20px; box-sizing: border-box;">
     
-    <div class="box-avaliacao" style="width: 100%; max-width: 400px; background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); box-sizing: border-box;">
+    <div class="box-avaliacao" style="width: 100%; max-width: 400px; padding: 30px; border-radius: 12px;  box-sizing: border-box;">
         <form method="post">
-           <h2 style="text-align: center; color: #333333; margin-top: 0; margin-bottom: 20px;">Formulário de Avaliação</h2>
+           <h2 id ="form-aval" style="text-align: center; margin-top: 0; margin-bottom: 20px;">Formulário de Avaliação</h2>
            
-           <label for="nome" style="display: block; text-align: left; margin-bottom: 8px; font-weight: 600; color: #555555;">Nome:</label>
+           <label for="nomeTexto" style="display: block; text-align: left; margin-bottom: 8px; font-weight: 600;">Nome:</label>
            <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
            
-           <label for="Avaliação" style="display: block; text-align: left; margin-bottom: 8px; font-weight: 600; color: #555555;">Avalie de 1 a 5!</label>
-           <input type="range" id="Avaliação" name="Avaliação" min="1" max="5">
+           <label for="textoAvaliacao" style="display: block; text-align: left; margin-bottom: 8px; font-weight: 600;">Avalie de 1 a 5!</label>
+           <input type="range" id="avaliacao" name="Avaliacao" min="1" max="5">
            
-           <label for="sugestões" style="display: block; text-align: left; margin-bottom: 8px; font-weight: 600; color: #555555;">Sugestões</label>
-           <textarea id="sugestões" rows="5" spellcheck="false" autocomplete="off"></textarea>
+           <label for="sugestoesTexto" style="display: block; text-align: left; margin-bottom: 8px; font-weight: 600;">Sugestões</label>
+           <textarea id="sugestoes" rows="5" spellcheck="false" autocomplete="off"></textarea>
            
-           <input type="submit" value="Enviar Avaliação" style="width: 100%; margin-top: 10px;">     
+           <input type="submit" id="enviar" value="Enviar Avaliação" style="width: 100%; margin-top: 30px;">     
         </form>
     </div>
 
