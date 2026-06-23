@@ -898,6 +898,7 @@ nav {
     padding-left: calc(var(--bs-gutter-x) * .5);
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 4rem;
 }
 
 .box-avaliacao {
