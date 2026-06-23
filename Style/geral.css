@@ -141,7 +141,7 @@ body.dark-theme {
     & .box-avaliacao {
         background-color:#1e1e1e;
     }
-    & #nome, #sugestoes, #enviar {
+    & #nome, #sugestoes, #enviar, #email {
         background-color:#444343;
         border: solid 1px #515151;
         color: #dadada;
@@ -151,7 +151,7 @@ body.dark-theme {
         color: #ffffff;
     }
 
-    & #nome:focus, #sugestoes:focus {
+    & #nome:focus, #sugestoes:focus, #email:focus {
     border-color: #f2ff00;     
     box-shadow: 0 0 0 0.15px  rgb(201, 255, 4);
     outline: none;           
@@ -259,12 +259,12 @@ body.dark-theme {
   
     }
 
-    & #nome, #sugestoes, #enviar {
+    & #nome, #sugestoes, #enviar, #email {
         background-color: #f9f9f9;
         border: solid 1px #515151;
     }
 
-    & #nome:focus, #sugestoes:focus {
+    & #nome:focus, #sugestoes:focus, #email:focus {
     border-color: blueviolet;     
     box-shadow: 0 0 0 0.3px rgb(137, 43, 226) ; 
     outline: none;           
@@ -931,7 +931,7 @@ nav {
     font-weight: 600;
 }
 
-#nome, #sugestões {
+#nome, #sugestões, #email {
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
