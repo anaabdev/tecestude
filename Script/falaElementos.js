@@ -23,7 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Função para iniciar a fala
     function startSpeech(event) {
-        const message = event.target.getAttribute('data-message');
+        const card = document.getElementById('cardPalavraSom');
+        if (card && card.classList.contains('PalavraSomhidden')) return;
+
+        // Encontra o elemento com a classe .element mais próximo (caso o mouse entre em uma tag interna como h3 ou h5)
+        const button = event.target.closest('.element');
+        if (!button) return;
+
+        const message = button.getAttribute('data-message');
         const vozelemento = new SpeechSynthesisUtterance(message);
 
         // Nome da voz padrão
@@ -61,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         buttons.forEach(button => {
             button.addEventListener('mouseover', startSpeech);
             button.addEventListener('mouseout', stopSpeech);
+            button.addEventListener('click', stopSpeech);
         });
     }
 });

@@ -52,7 +52,7 @@ const enableTextSelection = () => {
     document.body.classList.add('word-select-enabled');
 
     // Adiciona a classe 'clickable' a todos os elementos que podem ser clicados
-    const allElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, a, li, b'); // Inclua os elementos que deseja tornar clicáveis
+    const allElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, a, li, b'); 
     allElements.forEach(element => {
         element.classList.add('clickable');
     });
@@ -123,35 +123,46 @@ if ('speechSynthesis' in window) {
     alert('A síntese de fala não é suportada neste dispositivo.');
 }
 
-// Controle de exibição do card e habilitação de seleção de texto
-document.getElementById('btnPalavraSom').addEventListener('click', function() {
-    const card = document.getElementById('cardPalavraSom');
-    card.classList.toggle('PalavraSomhidden');
+const btnPalavraSom = document.getElementById('btnPalavraSom');
+if (btnPalavraSom) {
+    btnPalavraSom.addEventListener('click', function() {
+        const card = document.getElementById('cardPalavraSom');
+        if (card) {
+            card.classList.toggle('PalavraSomhidden');
 
-    if (!card.classList.contains('PalavraSomhidden')) {
-        enableTextSelection(); // Habilita a seleção de texto quando o card é aberto
-    } else {
-        disableTextSelection(); // Desabilita quando o card é fechado
+            if (!card.classList.contains('PalavraSomhidden')) {
+                enableTextSelection(); // Habilita a seleção de texto quando o card é aberto
+            } else {
+                disableTextSelection(); // Desabilita quando o card é fechado
+                setTimeout(() => {
+                    window.speechSynthesis.cancel(); // Interrompe a fala ao fechar o card
+                    removeTextHighlight(); // Remove o destaque do texto ao fechar o card
+                }, 100); 
+            }
+        }
+    });
+}
+
+// Controle de fechamento do card (Com checagem de segurança se o elemento existe)
+const closeCard = document.getElementById('closeCardPalavraSom');
+if (closeCard) {
+    closeCard.addEventListener('click', function() {
+        const card = document.getElementById('cardPalavraSom');
+        if (card) card.classList.add('PalavraSomhidden');
+        disableTextSelection(); 
         setTimeout(() => {
-            window.speechSynthesis.cancel(); // Interrompe a fala ao fechar o card
-            removeTextHighlight(); // Remove o destaque do texto ao fechar o card
-        }, 100); // Um pequeno atraso para garantir que a fala seja interrompida
-    }
-});
+            window.speechSynthesis.cancel(); 
+            removeTextHighlight(); 
+        }, 100); 
+    });
+}
 
-// Controle de fechamento do card
-document.getElementById('closeCardPalavraSom').addEventListener('click', function() {
-    document.getElementById('cardPalavraSom').classList.add('PalavraSomhidden');
-    disableTextSelection(); // Desabilita a seleção de texto ao fechar o card
-    setTimeout(() => {
-        window.speechSynthesis.cancel(); // Interrompe a fala ao fechar o card
-        removeTextHighlight(); // Remove o destaque do texto ao fechar o card
-    }, 100); // Um pequeno atraso para garantir que a fala seja interrompida
-});
-
-// Controle do botão "Parar de Falar"
-document.getElementById('pararDeFalar').addEventListener('click', function() {
-    window.speechSynthesis.cancel(); // Interrompe a fala
-    isSpeaking = false; // Reseta o estado de fala
-    removeTextHighlight(); // Remove o destaque do texto ao parar de falar
-});
+// Controle do botão "Parar de Falar" (Com checagem de segurança se o elemento existe)
+const btnParar = document.getElementById('pararDeFalar');
+if (btnParar) {
+    btnParar.addEventListener('click', function() {
+        window.speechSynthesis.cancel(); // Interrompe a fala
+        isSpeaking = false; // Reseta o estado de fala
+        removeTextHighlight(); // Remove o destaque do texto ao parar de falar
+    });
+}
